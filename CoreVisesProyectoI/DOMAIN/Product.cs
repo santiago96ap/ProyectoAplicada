@@ -11,7 +11,6 @@ namespace DOMAIN
 
         //Attributes
         public ObjectId idBD { get; set; }
-        public int id { get; set; }
         public String name { get; set; }
         public String category { get; set; }
         public int price { get; set; }
@@ -20,7 +19,6 @@ namespace DOMAIN
 
         public Product()
         {
-            this.id = 0;
             this.name = " ";
             this.category = " ";
             this.price = 0;
@@ -28,10 +26,9 @@ namespace DOMAIN
             this.status = " ";
         }//build default
 
-        public Product(ObjectId idBD, int id, String name, String category, int price, int quantity, String status)
+        public Product(ObjectId idBD, String name, String category, int price, int quantity, String status)
         {
             this.idBD = idBD;
-            this.id = id;
             this.name = name;
             this.category = category;
             this.price = price;
@@ -41,7 +38,7 @@ namespace DOMAIN
 
         public string toString()
         {
-            return "ID: " + this.id + "\nName: " + this.name + "\nCategory: " + this.category + "\nPrice: " + this.price +
+            return "ID: " + this.idBD + "\nName: " + this.name + "\nCategory: " + this.category + "\nPrice: " + this.price +
                 "\nQuantity: " + this.quantity + "\nStatus: " + this.status;
         }//toString 
 

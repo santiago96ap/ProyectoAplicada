@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DOMAIN
 {
-    public class Bill
-    {
+    public class Bill{
+
     }//class
 }//namespace
