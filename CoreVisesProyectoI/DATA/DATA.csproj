@@ -43,7 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MongoDB.Driver.Legacy">
-      <HintPath>..\..\..\..\..\Documents\WebServiceInsertDB\MongoDB.Driver.Legacy.dll</HintPath>
+      <HintPath>E:\mongo\MongoDB.Driver.Legacy.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
