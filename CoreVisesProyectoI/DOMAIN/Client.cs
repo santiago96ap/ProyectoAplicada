@@ -22,9 +22,8 @@ namespace DOMAIN{
             this.card = "";
         }//Construct default
 
-        public Client(ObjectId idDB, String name, String mail, String pass, String card)
-        {
-            this.idDB = idDB;
+        public Client(String name, String mail, String pass, String card)
+        {            
             this.name = name;
             this.mail = mail;
             this.pass = pass;
