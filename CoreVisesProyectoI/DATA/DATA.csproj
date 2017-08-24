@@ -43,7 +43,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="MongoDB.Driver.Legacy">
-      <HintPath>E:\mongo\MongoDB.Driver.Legacy.dll</HintPath>
+      <HintPath>..\..\..\..\..\Documents\UCR\II Semestre - 2017\Informática aplicada a los negocios\Proyectos\Proyecto I\mongo\MongoDB.Driver.Legacy.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
