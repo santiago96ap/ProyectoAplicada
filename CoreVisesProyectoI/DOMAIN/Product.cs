@@ -28,11 +28,9 @@ namespace DOMAIN
             this.status = " ";
         }//build default
 
-        public Product(
-            //ObjectId idBD,
-             int id, String name, String category, int price, int quantity, String status)
+        public Product(ObjectId idBD, int id, String name, String category, int price, int quantity, String status)
         {
-            //this.idBD = idBD;
+            this.idBD = idBD;
             this.id = id;
             this.name = name;
             this.category = category;
