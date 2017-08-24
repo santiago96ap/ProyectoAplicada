@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace DOMAIN{
     public class Client{
         //Attributes
-        public ObjectId idDB { get; set; }
-        public String name { get; set; }
-        public String mail { get; set; }
-        public String pass { get; set; }
-        public String card { get; set; }
+        public ObjectId idDB { get; set; } // Sets and Gets
+        public String name { get; set; } // Sets and Gets
+        public String mail { get; set; } // Sets and Gets
+        public String pass { get; set; } // Sets and Gets 
+        public String card { get; set; } // Sets and Gets
 
         public Client()
         {
@@ -36,5 +36,5 @@ namespace DOMAIN{
             return "Client: " + this.name+ ", Mail: " + this.mail+ ", Card: " + this.card;
         }//toString
 
-    }
-}
+    }// End class
+}// End namespace
