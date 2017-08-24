@@ -42,6 +42,16 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DATA\DATA.csproj">
+      <Project>{c9c0a4cd-3163-4955-af75-028ce7ea385f}</Project>
+      <Name>DATA</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DOMAIN\DOMAIN.csproj">
+      <Project>{4a43062f-1cce-403f-8e73-4e353fcb3fba}</Project>
+      <Name>DOMAIN</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

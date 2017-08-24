@@ -1,15 +1,14 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DOMAIN
-{
-    class Client
-    {
+namespace DOMAIN{
+    public class Client{
         //Attributes
-        //public ObjectId idDB { get; set; }
+        public ObjectId idDB { get; set; }
         public String name { get; set; }
         public String mail { get; set; }
         public String pass { get; set; }
