@@ -44,6 +44,30 @@ namespace DATA
             return collection.FindAllAs<Client>().ToList<Client>(); // select del doc cliente y lo almacena en una lista a retornar de tipo cliente
 
         }//end insertClient
+        public Boolean loginClient(String mail,String pass)
+        {
+            Boolean ret = false;
+            try
+            {
+                MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
+                MongoServer ms = mc.GetServer();
+                MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
+                ms.Connect();
+                MongoCollection collection = db.GetCollection<Client>("Client");
+                //var query = Query.EQ("mail", mail);
+             //   var query = Query.EQ("mail", mail, "pass", pass);
+               // "
+             //   List<Client> client = collection.FindAs
+
+         //       if (client.pass.equalsIgnoreCase(pass)) { }
+
+                ret = true;
+            }
+            catch (Exception error) {
+                ret = false;
+            }
+            return ret;
+        }//end insertClient
 
         public Boolean deleteClient(String name) {
             Boolean ret = false;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
+using DOMAIN;
+using BUSINESS;
 
 namespace CoreVisesProyectoI
 {
@@ -24,9 +26,16 @@ namespace CoreVisesProyectoI
         }
 
         [WebMethod]
-        public void LoginClient()
+        public void LoginClient(String mail, String pass)
         {
-            //Maynor es aqui
+            ClientBusiness cb = new ClientBusiness();
+            Boolean verify;
+           // verify = cb.s
+
+        }
+
+        [WebMethod]
+        public void RegisterClient() {
         }
 
     }
