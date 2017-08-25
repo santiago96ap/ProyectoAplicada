@@ -19,8 +19,7 @@ namespace DOMAIN{
             this.type = "";
         }//End construct default
 
-        public Manager(ObjectId idDB,String name, String password, String type) {
-            this.idBD = idDB;
+        public Manager(String name, String password, String type) {
             this.name = name;
             this.password = password;
             this.type = type;
