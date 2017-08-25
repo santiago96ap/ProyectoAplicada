@@ -39,12 +39,12 @@ namespace BUSINESS
 
         public Boolean deleteClient(String name)
         {
-            return deleteClient(name);
+            return cd.deleteClient(name);
         }//end deleteClient
 
         public Boolean updateClient(String name, String mail, String pass)
         {
-            return updateClient(name, mail, pass);
+            return cd.updateClient(name, mail, pass);
         }//end updateClient
 
     }//end class
