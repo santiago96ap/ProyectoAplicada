@@ -28,21 +28,13 @@ namespace CoreVisesProyectoI{
             Boolean verify;
             // verify = cb.s
 
-            /* Ejemplo de como instanciar y usar RSA            
-               
-            RSA rsa = new RSA(); lo instancia
-               
-            byte[] nameBytes = rsa.DecryptText(name, rsa.PrivateKey); name es la variable encriptada que recibe por parametros de tipo string
-
-            byte[] phoneBytes = rsa.DecryptText(phone, rsa.PrivateKey);  phone es la variable encriptada que recibe por parametros de tipo string
-
-            string nameDecrypted = Encoding.ASCII.GetString(nameBytes); Son los datos ya desencriptados de la variable name
-
-            string phoneDecrypted = Encoding.ASCII.GetString(phoneBytes); Son los datos ya desencriptados de la variable phone */
+           
         }//End LoginClient
 
         [WebMethod]
-        public void RegisterClient() {
+        public Boolean RegisterClient(string name, string mail, string pass, string card) {
+            ClientBusiness cb = new ClientBusiness();            
+            return cb.insertClient(name, mail, pass, card);            
         }//End RegisterClient
 
     }//End class WebServiceLoginSoap
