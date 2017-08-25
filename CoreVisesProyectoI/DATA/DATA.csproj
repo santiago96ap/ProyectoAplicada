@@ -68,6 +68,10 @@
       <Project>{4a43062f-1cce-403f-8e73-4e353fcb3fba}</Project>
       <Name>DOMAIN</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UTIL\UTIL.csproj">
+      <Project>{4940ac08-5876-4b37-be82-75f3386a12b6}</Project>
+      <Name>UTIL</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
