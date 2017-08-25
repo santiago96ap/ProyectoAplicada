@@ -21,8 +21,7 @@ namespace DOMAIN{
             this.dateEnd = "";
         }//End costruct default
 
-        public Report(ObjectId idBD, float totalIncome, float totalExpenses, String dateStart, String dateEnd){
-            this.idBD = idBD;
+        public Report(float totalIncome, float totalExpenses, String dateStart, String dateEnd){
             this.totalIncome = totalIncome;
             this.totalExpenses = totalExpenses;
             this.dateStart = dateStart;
