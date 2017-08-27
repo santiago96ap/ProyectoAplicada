@@ -23,9 +23,8 @@ namespace DOMAIN
             this.totalPay = 0;
         }//Construct default
 
-        public CustomerPurchase(ObjectId idDB, String clientName, String productName, int quantity, int totalPay)
+        public CustomerPurchase(String clientName, String productName, int quantity, int totalPay)
         {
-            this.idDB = idDB;
             this.clientName = clientName;
             this.productName = productName;
             this.quantity = quantity;
