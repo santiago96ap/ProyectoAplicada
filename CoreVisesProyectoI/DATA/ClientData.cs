@@ -52,7 +52,14 @@ namespace DATA {
                 Client client = new Client();
                 var query = Query.And(Query.EQ("mail", mail), Query.EQ("pass", pass));                
                 client = collection.FindOneAs<Client>(query);///
-                ret = true;
+                if (client != null)
+                {
+                    ret = true;
+                }
+                else {
+                    ret = false;
+                } 
+                
             }
             catch (Exception error) {
                 ret = false;
