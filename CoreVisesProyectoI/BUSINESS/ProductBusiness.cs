@@ -21,6 +21,11 @@ namespace BUSINESS
         public int quantity { get; set; }
         public String status { get; set; }*/
 
+        public ProductBusiness()
+        {
+            this.productData = new ProductData();
+        }//constructor
+
         public Boolean insertProduct(String name, String category, int price, int quantity, String status)
         {
 
