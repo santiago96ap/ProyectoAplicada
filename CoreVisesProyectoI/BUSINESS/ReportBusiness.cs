@@ -12,6 +12,11 @@ namespace BUSINESS{
         //Attributes
         private ReportData rd;
 
+        public ReportBusiness()
+        {
+            this.rd = new ReportData();
+        }//constructor
+
         public Boolean insertReport(float totalIncome, float totalExpenses, string dateStart, string dateEnd){
 
             RSA rsa = new RSA();

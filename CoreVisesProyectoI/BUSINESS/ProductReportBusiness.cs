@@ -11,6 +11,11 @@ namespace BUSINESS {
     public class ProductReportBusiness {
         private ProductReportData productReportData;
 
+        public ProductReportBusiness()
+        {
+            this.productReportData = new ProductReportData();
+        }//constructor
+
         public Boolean insertProductReport(string productName, string quantity, string totalPay) {
 
             RSA rsa = new RSA();

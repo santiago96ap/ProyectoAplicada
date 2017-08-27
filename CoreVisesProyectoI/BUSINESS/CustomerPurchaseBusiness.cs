@@ -14,6 +14,11 @@ namespace BUSINESS
 
         private CustomerPurchaseData customerPurchaseData;
 
+        public CustomerPurchaseBusiness()
+        {
+            this.customerPurchaseData = new CustomerPurchaseData();
+        }//constructor
+
         public Boolean insertCustomerPurchase(String clientName, String productName, int quantity, int totalPay)
         {
 

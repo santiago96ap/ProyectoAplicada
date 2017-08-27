@@ -11,6 +11,11 @@ namespace BUSINESS
 {
     public class BillBusiness   {
         private BillData bd;
+        public BillBusiness()
+        {
+            this.bd = new BillData();
+        }//constructor
+
 
         public Boolean insertBill(string date, float amount, string subject, string client, string concept, string productName)
         {

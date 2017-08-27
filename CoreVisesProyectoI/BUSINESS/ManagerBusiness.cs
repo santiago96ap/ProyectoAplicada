@@ -12,6 +12,11 @@ namespace BUSINESS{
     public class ManagerBusiness{
         //Attributes
         private ManagerData md;
+        public ManagerBusiness()
+        {
+            this.md = new ManagerData();
+        }//constructor
+
 
         public Boolean insertManager(string name, string pass, string type){
 
