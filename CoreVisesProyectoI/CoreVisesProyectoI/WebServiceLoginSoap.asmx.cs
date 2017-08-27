@@ -27,8 +27,6 @@ namespace CoreVisesProyectoI{
             ClientBusiness cb = new ClientBusiness();
             Boolean verify;
             // verify = cb.s
-
-           
         }//End LoginClient
 
         [WebMethod]
@@ -38,5 +36,4 @@ namespace CoreVisesProyectoI{
         }//End RegisterClient
 
     }//End class WebServiceLoginSoap
-
 }//End namespace CoreVisesProyectoI

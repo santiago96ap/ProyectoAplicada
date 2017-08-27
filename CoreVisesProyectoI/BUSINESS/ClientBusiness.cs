@@ -7,14 +7,16 @@ using DATA;
 using DOMAIN;
 using UTIL;
 
-namespace BUSINESS
-{
-    public class ClientBusiness
-    {
+namespace BUSINESS {
+    public class ClientBusiness {
+
         private ClientData cd;
 
-        public Boolean insertClient(string name, string mail, string pass, string card)
-        {             
+        public ClientBusiness() {
+            this.cd = new ClientData();
+        }
+
+        public Boolean insertClient(string name, string mail, string pass, string card) {             
 
            RSA rsa = new RSA();
 

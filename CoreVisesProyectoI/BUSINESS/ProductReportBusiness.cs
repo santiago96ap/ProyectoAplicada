@@ -32,11 +32,11 @@ namespace BUSINESS {
         }//selectProductReport
 
         public Boolean deleteProductReport(String productName) {
-            return deleteProductReport(productName);
+            return productReportData.deleteProductReport(productName);
         }//deleteProductReport
 
         public Boolean updateProductReport(String productName, int quantity, int totalPay) {
-            return updateProductReport(productName, quantity, totalPay);
+            return productReportData.updateProductReport(productName, quantity, totalPay);
         }//updateProductReport
     }//ProductReportBusiness
 }//Namespace

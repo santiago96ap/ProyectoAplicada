@@ -8,14 +8,11 @@ using MongoDB.Bson;
 using DOMAIN;
 using MongoDB.Driver.Builders;
 
-namespace DATA
-{
-    public class ClientData
-    {
+namespace DATA {
+    public class ClientData {
         public Boolean insertClient(String name, String mail,String pass,String card) {
             Boolean ret = false;
-            try
-            {
+            try {
 
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
                 MongoServer ms = mc.GetServer();
@@ -24,10 +21,8 @@ namespace DATA
                 MongoCollection collection = db.GetCollection<Client>("Client");
                 collection.Insert<Client>(client);
                 ret = true;
-                
             }//try
-            catch (Exception error)
-            {
+            catch (Exception error) {
                 ret = false;
             }//catch
             return ret;

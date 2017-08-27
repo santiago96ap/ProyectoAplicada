@@ -87,6 +87,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <Content Include="WebServiceLoginSoap.asmx" />
+    <None Include="Properties\PublishProfiles\WebService.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
