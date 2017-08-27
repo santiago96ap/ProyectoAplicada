@@ -49,8 +49,9 @@ namespace DATA {
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
                 ms.Connect();
                 MongoCollection collection = db.GetCollection<Client>("Client");
+                Client client = new Client();
                 var query = Query.And(Query.EQ("mail", mail), Query.EQ("pass", pass));                
-                var client = collection.FindOneAs<Client>(query);///
+                client = collection.FindOneAs<Client>(query);///
                 ret = true;
             }
             catch (Exception error) {
