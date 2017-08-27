@@ -37,7 +37,7 @@ namespace DOMAIN
 
         public string toString()
         {
-            return "ID: " + this.idBD + "\nName: " + this.name + "\nCategory: " + this.category + "\nPrice: " + this.price +
+            return "ID: " + this._id + "\nName: " + this.name + "\nCategory: " + this.category + "\nPrice: " + this.price +
                 "\nQuantity: " + this.quantity + "\nStatus: " + this.status;
         }//toString 
 

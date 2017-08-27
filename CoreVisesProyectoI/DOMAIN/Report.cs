@@ -29,7 +29,7 @@ namespace DOMAIN{
         }//End costruct overloaded
 
         public string toString(){
-            return "ID: " + this.idBD + "\nTotal Income: " + this.totalIncome + "\nTotal Expenses: " + this.totalExpenses + "\nDate Start: " + this.dateStart +
+            return "ID: " + this._id + "\nTotal Income: " + this.totalIncome + "\nTotal Expenses: " + this.totalExpenses + "\nDate Start: " + this.dateStart +
                 "\nDate End: " + this.dateEnd;
         }//End toString 
 

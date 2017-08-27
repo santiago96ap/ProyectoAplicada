@@ -26,7 +26,7 @@ namespace DOMAIN{
         }//End  construct overloaded
 
         public string toString(){
-            return "ID: " + this.idBD + "\nName: " + this.name + "\nPassword: " + this.password + "\nType: " + this.type;
+            return "ID: " + this._id + "\nName: " + this.name + "\nPassword: " + this.password + "\nType: " + this.type;
         }//End toString 
 
     }//End class Manager
