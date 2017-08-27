@@ -55,7 +55,7 @@ namespace DATA
                 ms.Connect();
                 MongoCollection collection = db.GetCollection<Client>("Client");
                 var query = Query.And(Query.EQ("mail", pass), Query.EQ("pass", pass));                
-                var client = collection.FindOneAs<Client>(query);
+                var client = collection.FindOneAs<Client>(query);///
                 ret = true;
             }
             catch (Exception error) {
