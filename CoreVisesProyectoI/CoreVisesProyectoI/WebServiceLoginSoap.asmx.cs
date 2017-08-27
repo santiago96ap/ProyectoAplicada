@@ -23,9 +23,9 @@ namespace CoreVisesProyectoI{
         }//End Helloworld
 
         [WebMethod]
-        public void LoginClient(String mail, String pass){
+        public Boolean LoginClient(string mail, string pass){
             ClientBusiness cb = new ClientBusiness();
-            Boolean verify;
+            return cb.loginClient(mail, pass);
             // verify = cb.s
         }//End LoginClient
 

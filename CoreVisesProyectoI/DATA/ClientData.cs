@@ -39,7 +39,7 @@ namespace DATA {
             return collection.FindAllAs<Client>().ToList<Client>(); // select del doc cliente y lo almacena en una lista a retornar de tipo cliente
 
         }//end insertClient
-        public Boolean loginClient(String mail,String pass)
+        public Boolean loginClient(string mail, string pass)
         {
             Boolean ret = false;
             try
@@ -49,7 +49,7 @@ namespace DATA {
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
                 ms.Connect();
                 MongoCollection collection = db.GetCollection<Client>("Client");
-                var query = Query.And(Query.EQ("mail", pass), Query.EQ("pass", pass));                
+                var query = Query.And(Query.EQ("mail", mail), Query.EQ("pass", pass));                
                 var client = collection.FindOneAs<Client>(query);///
                 ret = true;
             }

@@ -16,23 +16,27 @@ namespace BUSINESS {
             this.cd = new ClientData();
         }
 
-        public Boolean insertClient(string name, string mail, string pass, string card) {             
-
+        public Boolean insertClient(string name, string mail, string pass, string card) {
            RSA rsa = new RSA();
-
            byte[] nameBytes = rsa.DecryptText(name, rsa.PrivateKey); 
            byte[] mailBytes = rsa.DecryptText(mail, rsa.PrivateKey);
            byte[] passBytes = rsa.DecryptText(pass, rsa.PrivateKey);
            byte[] cardBytes = rsa.DecryptText(card, rsa.PrivateKey);
-
            string nameDecrypted = Encoding.ASCII.GetString(nameBytes);
            string mailDecrypted = Encoding.ASCII.GetString(mailBytes);
            string passDecrypted = Encoding.ASCII.GetString(passBytes);
            string cardDecrypted = Encoding.ASCII.GetString(cardBytes);
-            
            return cd.insertClient(nameDecrypted, mailDecrypted, passDecrypted, cardDecrypted);
-
         }//end insertClient
+
+        public Boolean loginClient(string email, string pass) {
+            RSA rsa = new RSA();
+            byte[] mailBytes = rsa.DecryptText(email, rsa.PrivateKey);
+            byte[] passBytes = rsa.DecryptText(pass, rsa.PrivateKey);
+            string mailDecrypted = Encoding.ASCII.GetString(mailBytes);
+            string passDecrypted = Encoding.ASCII.GetString(passBytes);
+            return cd.loginClient(mailDecrypted, passDecrypted);
+        }
 
         public List<Client> selectClient()
         {
