@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DOMAIN{
     public class Report{
         //Attributes
-        public ObjectId idBD { get; set; }//End set get idDB
+        public ObjectId _id { get; set; }//End set get idDB
         public float totalIncome { get; set; }//End set get totalIncome
         public float totalExpenses { get; set; }//End set get totalExpenses
         public String dateStart { get; set; }//End set get dateStart

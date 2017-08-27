@@ -10,7 +10,7 @@ namespace DOMAIN
     public class Product{
 
         //Attributes
-        public ObjectId idBD { get; set; }
+        public ObjectId _id { get; set; }
         public String name { get; set; }
         public String category { get; set; }
         public int price { get; set; }

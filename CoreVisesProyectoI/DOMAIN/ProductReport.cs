@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace DOMAIN {
     public class ProductReport {
 
         //Attributes
+        public ObjectId _id { get; set; }
         public string productName { get; set; } // Sets and Gets
         public int quantity { get; set; } // Sets and Gets
         public int totalPay { get; set; } // Sets and Gets

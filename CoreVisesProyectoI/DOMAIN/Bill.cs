@@ -28,7 +28,7 @@ namespace DOMAIN
         }//default
 
         /*Set and Get*/
-        public ObjectId idDB { get; set; }
+        public ObjectId _id { get; set; }
         public String date { get; set; }
         public float amount { get; set; }
         public String subject { get; set; }

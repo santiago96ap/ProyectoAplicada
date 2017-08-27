@@ -48,8 +48,10 @@ namespace DATA {
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
                 ms.Connect();
                 MongoCollection collection = db.GetCollection<Client>("Client");
-                Client client = new Client();
-                List<Client> clients = selectClient();
+                var query = Query.And(Query.EQ("mail", mail), Query.EQ("pass", pass));
+                var client = collection.FindOneAs<Client>(query);
+                //Client client = new Client();
+                /*List<Client> clients = selectClient();
                 foreach (Client item in clients){
                     if (item.mail.Equals(mail) && item.pass.Equals(pass)) {
                         ret = true;
@@ -57,7 +59,8 @@ namespace DATA {
                     } else {
                         ret = false;
                     }//End if (item.mail.Equals(mail) && item.pass.Equals(pass))
-                }//End foreach (Client item in clients)                 
+                }//End foreach (Client item in clients)*/
+                ret = true;       
             }catch (Exception error) {
                 ret = false;
             }
