@@ -73,7 +73,7 @@
                     </div>
                     <div class="top-right">
                         <ul>
-                            <li><a href="?controlador=Default&accion=login">Log in</a></li>
+                            <li><a href="login.aspx">Log in</a></li>
                             <li><a href="?controlador=Default&accion=register">Sign in</a></li>
                         </ul>
                     </div>
