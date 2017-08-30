@@ -18,13 +18,13 @@
             window.scrollTo(0,1); 
         } 
         </script>
-        <script src="public/js/jquery.min.js"></script>
+        <script src="js/jquery.min.js"></script>
         <link href='//fonts.googleapis.com/css?family=Cagliostro' rel='stylesheet' type='text/css'>
         <link href='//fonts.googleapis.com/css?family=Open+Sans:400,800italic,800,700italic,700,600italic,600,400italic,300italic,300' rel='stylesheet' type='text/css'>
         <link href="public/css/coreSlider.css" rel="stylesheet" type="text/css">
-        <script src="public/js/coreSlider.js"></script>
-        <script src="public/js/main.js"></script>
-        <script src="public/js/responsiveslides.min.js"></script>
+        <script src="js/coreSlider.js"></script>
+        <script src="js/main.js"></script>
+        <script src="js/responsiveslides.min.js"></script>
         <script>
             $(function () {
                 $("#slider").responsiveSlides({
@@ -36,9 +36,9 @@
                 });
             });
         </script>
-        <script type="text/javascript" src="public/js/bootstrap-3.1.1.min.js"></script>
-        <script src="public/js/simpleCart.min.js"></script>
-        <script src="public/js/jstarbox.js"></script>
+        <script type="text/javascript" src="js/bootstrap-3.1.1.min.js"></script>
+        <script src="js/simpleCart.min.js"></script>
+        <script src="js/jstarbox.js"></script>
         <link rel="stylesheet" href="public/css/jstarbox.css" type="text/css" media="screen" charset="utf-8" />
         <script type="text/javascript">
             jQuery(function () {
@@ -84,7 +84,7 @@
                 <div class="container">
                     <div class="logo-nav">
                         <div class="logo-nav-left">
-                            <h1><a href="?controlador=Default&accion=index"><img src="public/images/image3688.png" alt=" "/></a></h1>
+                            <h1><a href="?controlador=Default&accion=index"><img src="images/image3688.png" alt=" "/></a></h1>
                         </div>
                         <div class="logo-nav-left1">
                             <nav class="navbar navbar-default">
@@ -116,10 +116,10 @@
                                                         </ul>
                                                     </div>
                                                     <div class="col-sm-3  multi-gd-img">
-                                                        <a href="products.html"><img src="public/images/woo.jpg" alt=" "/></a>
+                                                        <a href="products.html"><img src="images/woo.jpg" alt=" "/></a>
                                                     </div> 
                                                     <div class="col-sm-3  multi-gd-img">
-                                                        <a href="products.html"><img src="public/images/woo1.jpg" alt=" "/></a>
+                                                        <a href="products.html"><img src="images/woo1.jpg" alt=" "/></a>
                                                     </div>
                                                     <div class="clearfix"></div>
                                                 </div>
@@ -148,7 +148,7 @@
                                 <a href="checkout.html">
                                     <h3> <div class="total">
                                             <span class="simpleCart_total"></span> (<span id="simpleCart_quantity" class="simpleCart_quantity"></span> items)</div>
-                                        <img src="public/images/bag.png" alt="" />
+                                        <img src="images/bag.png" alt="" />
                                     </h3>
                                 </a>
                                 <p><a href="javascript:;" class="simpleCart_empty">Empty Cart</a></p>
@@ -208,7 +208,7 @@
             <p>&copy; 2017 Gremlin Shop . All rights reserved |</a></p>
         </div>
         <div class="copy-right">
-            <img src="public/images/card.png" alt=""/>
+            <img src="images/card.png" alt=""/>
         </div>
         <div class="clearfix"></div>
     </div>
@@ -222,7 +222,7 @@
             <div class="modal-body">
                 <div class="news-gr">
                     <div class="col-md-5 new-grid1">
-                        <img src="public/images/p5.jpg" class="img-responsive" alt="">
+                        <img src="images/p5.jpg" class="img-responsive" alt="">
                     </div>
                     <div class="col-md-7 new-grid">
                         <h5>Ten Women's Cotton Viscose fabric Grey Shrug</h5>
@@ -266,7 +266,7 @@
                             <span class="size">XL / XXL / S </span>
                             <p ><del>$100.00</del><em class="item_price"> $70.00 </em></p>
                             <div class="add">
-                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="public/images/of2.png">Add to Cart</button>
+                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -285,7 +285,7 @@
             <div class="modal-body">
                 <div class="news-gr">
                     <div class="col-md-5 new-grid1">
-                        <img src="public/images/p7.jpg" class="img-responsive" alt="">
+                        <img src="images/p7.jpg" class="img-responsive" alt="">
                     </div>
                     <div class="col-md-7 new-grid">
                         <h5>Ten Women's Cotton Viscose fabric Grey Shrug</h5>
@@ -329,7 +329,7 @@
                             <span class="size">XL / XXL / S </span>
                             <p ><del>$100.00</del><em class="item_price"> $70.00 </em></p>
                             <div class="add">
-                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="public/images/of2.png">Add to Cart</button>
+                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -348,7 +348,7 @@
             <div class="modal-body">
                 <div class="news-gr">
                     <div class="col-md-5 new-grid1">
-                        <img src="public/images/p10.jpg" class="img-responsive" alt="">
+                        <img src="images/p10.jpg" class="img-responsive" alt="">
                     </div>
                     <div class="col-md-7 new-grid">
                         <h5>Ten Men's Cotton Viscose fabric Grey Shrug</h5>
@@ -392,7 +392,7 @@
                             <span class="size">XL / XXL / S </span>
                             <p ><del>$100.00</del><em class="item_price"> $70.00 </em></p>
                             <div class="add">
-                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="public/images/of2.png">Add to Cart</button>
+                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
                             </div>
                         </div>
                     </div>
@@ -411,7 +411,7 @@
             <div class="modal-body">
                 <div class="news-gr">
                     <div class="col-md-5 new-grid1">
-                        <img src="public/images/p12.jpg" class="img-responsive" alt="">
+                        <img src="images/p12.jpg" class="img-responsive" alt="">
                     </div>
                     <div class="col-md-7 new-grid">
                         <h5>Ten Men's Cotton Viscose fabric Grey Shrug</h5>
@@ -455,7 +455,7 @@
                             <span class="size">XL / XXL / S </span>
                             <p ><del>$100.00</del><em class="item_price"> $70.00 </em></p>
                             <div class="add">
-                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="public/images/of2.png">Add to Cart</button>
+                                <button class="btn btn-danger my-cart-btn my-cart-b" data-id="3" data-name="Kabuli Chana" data-summary="summary 3" data-price="2.00" data-quantity="1" data-image="images/of2.png">Add to Cart</button>
                             </div>
                         </div>
                     </div>
