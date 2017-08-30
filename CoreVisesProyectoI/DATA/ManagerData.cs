@@ -45,15 +45,22 @@ namespace DATA {
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
                 ms.Connect();
                 MongoCollection collection = db.GetCollection<Manager>("Manager");
-                //var query = Query.EQ("mail", mail);
-                //   var query = Query.EQ("mail", mail, "pass", pass);
-                // "
-                //   List<Client> client = collection.FindAs
-
-                //       if (client.pass.equalsIgnoreCase(pass)) { }
-
-                ret = true;
-            }catch (Exception error){
+                Manager client = new Manager();
+                List<Manager> clients = selectManager();
+                foreach (Manager item in clients)
+                {
+                    if (item.name.Equals(name) && item.password.Equals(pass))
+                    {
+                        ret = true;
+                        break;
+                    }
+                    else
+                    {
+                        ret = false;
+                    }//End if (item.mail.Equals(mail) && item.pass.Equals(pass))
+                }//End foreach (Client item in clients)
+            }
+            catch (Exception error){
                 ret = false;
             }//End try-catch (Exception error)
             return ret;

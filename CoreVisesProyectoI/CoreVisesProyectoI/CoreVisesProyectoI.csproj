@@ -88,6 +88,7 @@
     <Content Include="public\Default.aspx" />
     <Content Include="packages.config" />
     <Content Include="public\Login.aspx" />
+    <Content Include="public\Register.aspx" />
     <Content Include="WebServiceLoginSoap.asmx" />
     <None Include="Properties\PublishProfiles\WebService.pubxml" />
     <None Include="Properties\PublishProfiles\WSproyect.pubxml" />
@@ -117,6 +118,13 @@
     </Compile>
     <Compile Include="public\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="public\Register.aspx.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="public\Register.aspx.designer.cs">
+      <DependentUpon>Register.aspx</DependentUpon>
     </Compile>
     <Compile Include="Site1.Master.cs">
       <DependentUpon>Site1.Master</DependentUpon>
