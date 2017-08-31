@@ -7,37 +7,21 @@
         <div class="main-agileits">
             <div class="form-w3agile form1">
                 <h3>Register</h3>
-                <form action="?controlador=Default&accion=registerClient" method="post">
-                    <div class="key">
-                        <i class="fa fa-user" aria-hidden="true"></i>
-                        <input  type="text" value="name" name="name" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Name';
-                                }" required="">
-                        <div class="clearfix"></div>
-                    </div>
-                    <div class="key">
-                        <i class="fa fa-lock" aria-hidden="true"></i>
-                        <input  type="text" value="cardNumber" name="cardNumber" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'CardNumber';
-                                }" required="">
-                        <div class="clearfix"></div>
-                    </div>
+                <form id="form1" runat="server">
                     <div class="key">
                         <i class="fa fa-envelope" aria-hidden="true"></i>
-                        <input  type="text" value="email" name="email" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Email';
-                                }" required="">
+                        <asp:TextBox ID="tbEmailRegister" value="email" type="text" name="email" runat="server" placeholder="Email" required=""></asp:TextBox>
                         <div class="clearfix"></div>
                     </div>
                     <div class="key">
                         <i class="fa fa-lock" aria-hidden="true"></i>
-                        <input  type="password" value="password" name="password" onfocus="this.value = '';" onblur="if (this.value == '') {
-                                    this.value = 'Password';
-                                }" required="">
+                        <asp:TextBox ID="tbPassRegister" value="password" type="password" name="password" runat="server" placeholder="Password" required=""></asp:TextBox>
                         <div class="clearfix"></div>
                     </div>
-                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="submit" value="Submit">
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <asp:Button ID="Button2" value="Submit" runat="server" Text="Register" OnClick="Button2_Click" />
+                    <br/><asp:Label ID="Label1" runat="server"></asp:Label>
                 </form>
             </div>
         </div>

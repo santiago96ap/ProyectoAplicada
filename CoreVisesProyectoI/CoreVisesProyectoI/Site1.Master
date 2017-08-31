@@ -144,6 +144,14 @@
                                             </ul>
                                         </li>
                                         <li><a href="?controlador=Default&accion=mail">Mail Us</a></li>
+                                         <%if (Session["usuario"] == null){
+                                            Session["usuario"] = "N";
+                                        }if (Session["usuario"].ToString().Equals("N")){ %>
+                                            
+                                     <% }else{%>
+                                             <li class="active"><a href="Register.aspx" class="act">Register Admin</a></li>
+                                        </li>
+                                    <%  } %>   
                                     </ul>
                                 </div>
                             </nav>
