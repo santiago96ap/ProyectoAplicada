@@ -26,7 +26,7 @@ namespace BUSINESS
             this.productData = new ProductData();
         }//constructor
 
-        public Boolean insertProduct(String name, String category, int price, int quantity, String status)
+        public Boolean insertProduct(String name, String category, int price, int quantity, String status, String path)
         {
 
             RSA rsa = new RSA();
@@ -36,14 +36,16 @@ namespace BUSINESS
             byte[] priceBytes = rsa.DecryptText(price.ToString(), rsa.PrivateKey);
             byte[] quantityBytes = rsa.DecryptText(quantity.ToString(), rsa.PrivateKey);
             byte[] statusBytes = rsa.DecryptText(status, rsa.PrivateKey);
+            byte[] pathBytes = rsa.DecryptText(path,rsa.PrivateKey);
 
             string nameDecrypted = Encoding.ASCII.GetString(nameBytes);
             string categoryDecrypted = Encoding.ASCII.GetString(categoryBytes);
             string priceDecrypted = Encoding.ASCII.GetString(priceBytes);
             string quantityDecrypted = Encoding.ASCII.GetString(quantityBytes);
             string statusDecrypted = Encoding.ASCII.GetString(statusBytes);
+            string pathDecrypted = Encoding.ASCII.GetString(pathBytes);
 
-            return productData.insertProduct(nameDecrypted, categoryDecrypted, int.Parse(priceDecrypted), int.Parse(quantityDecrypted), statusDecrypted);
+            return productData.insertProduct(nameDecrypted, categoryDecrypted, int.Parse(priceDecrypted), int.Parse(quantityDecrypted), statusDecrypted, pathDecrypted);
 
         }//end insertProduct
 
@@ -57,9 +59,9 @@ namespace BUSINESS
             return productData.deleteProduct(name);
         }//end deleteClient
 
-        public Boolean updateProduct(String name, String category, int price, int quantity, String status)
+        public Boolean updateProduct(String name, String category, int price, int quantity, String status ,String path)
         {
-            return productData.updateProduct(name, category, price, quantity, status);
+            return productData.updateProduct(name, category, price, quantity, status,path);
         }//end updateClient
 
     }//end class
