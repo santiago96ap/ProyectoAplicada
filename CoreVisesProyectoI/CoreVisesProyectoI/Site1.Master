@@ -150,6 +150,7 @@
                                             
                                      <% }else{%>
                                              <li class="active"><a href="Register.aspx" class="act">Register Admin</a></li>
+                                             <li class="active"><a href="RegisterProduct.aspx" class="act">Register Product</a></li>
                                         </li>
                                     <%  } %>   
                                     </ul>
