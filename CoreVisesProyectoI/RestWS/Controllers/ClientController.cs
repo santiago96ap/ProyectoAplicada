@@ -37,7 +37,7 @@ namespace RestWS.Controllers
         }
 
         // POST REGISTER CLIENT api/values
-        public Boolean Register([FromBody]string name,string mail,string pass,string card)
+        public Boolean Register([FromBody]string name, [FromBody]string mail, [FromBody]string pass, [FromBody]string card)
         {
             ClientBusiness cb = new ClientBusiness();
             return cb.insertClientRest(name,mail,pass,card);            
