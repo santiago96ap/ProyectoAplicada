@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DOMAIN{
     public class Client{
         //Attributes
-        public ObjectId idDB { get; set; } // Sets and Gets
+        public ObjectId _id { get; set; } // Sets and Gets
         public String name { get; set; } // Sets and Gets
         public String mail { get; set; } // Sets and Gets
         public String pass { get; set; } // Sets and Gets 

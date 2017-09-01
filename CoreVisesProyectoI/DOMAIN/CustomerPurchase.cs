@@ -9,7 +9,7 @@ namespace DOMAIN
 {
     public class CustomerPurchase{
         //Attributes
-        public ObjectId idDB { get; set; }
+        public ObjectId _id { get; set; }
         public String clientName { get; set; }
         public String productName { get; set; }
         public int quantity { get; set; }

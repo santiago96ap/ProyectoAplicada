@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DOMAIN{
     public class Report{
         //Attributes
-        public ObjectId idBD { get; set; }//End set get idDB
+        public ObjectId _id { get; set; }//End set get idDB
         public float totalIncome { get; set; }//End set get totalIncome
         public float totalExpenses { get; set; }//End set get totalExpenses
         public String dateStart { get; set; }//End set get dateStart
@@ -29,7 +29,7 @@ namespace DOMAIN{
         }//End costruct overloaded
 
         public string toString(){
-            return "ID: " + this.idBD + "\nTotal Income: " + this.totalIncome + "\nTotal Expenses: " + this.totalExpenses + "\nDate Start: " + this.dateStart +
+            return "ID: " + this._id + "\nTotal Income: " + this.totalIncome + "\nTotal Expenses: " + this.totalExpenses + "\nDate Start: " + this.dateStart +
                 "\nDate End: " + this.dateEnd;
         }//End toString 
 

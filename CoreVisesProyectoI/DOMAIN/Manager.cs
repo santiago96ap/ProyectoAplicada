@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace DOMAIN{
     public class Manager{
         //Attributes
-        public ObjectId idBD { get; set; }//End set get idDB
+        public ObjectId _id { get; set; }//End set get idDB
         public String name { get; set; }//End set get name
         public String password { get; set; }//End set get password
         public String type { get; set; }//End set get type
@@ -26,7 +26,7 @@ namespace DOMAIN{
         }//End  construct overloaded
 
         public string toString(){
-            return "ID: " + this.idBD + "\nName: " + this.name + "\nPassword: " + this.password + "\nType: " + this.type;
+            return "ID: " + this._id + "\nName: " + this.name + "\nPassword: " + this.password + "\nType: " + this.type;
         }//End toString 
 
     }//End class Manager

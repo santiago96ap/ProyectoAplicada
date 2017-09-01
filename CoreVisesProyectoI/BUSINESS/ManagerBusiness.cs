@@ -34,6 +34,10 @@ namespace BUSINESS{
 
         }//End insertManager
 
+        public Boolean loginClient(string email, string pass){
+            return md.loginManager(email, pass);
+        }
+
         public List<Manager> selectManager(){
             return md.selectManager();
         }//End selectManager

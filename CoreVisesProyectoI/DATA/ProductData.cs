@@ -17,7 +17,7 @@ namespace DATA
         public int price { get; set; }
         public int quantity { get; set; }
         public String status { get; set; }*/
-        public Boolean insertProduct(String name, String category, int price, int quantity, String status)
+        public Boolean insertProduct(String name, String category, int price, int quantity, String status,String path)
         {
 
             Boolean ret = false; // return variable
@@ -26,7 +26,7 @@ namespace DATA
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
                 MongoServer ms = mc.GetServer();
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
-                var product = new Product(name, category, price, quantity, status);
+                var product = new Product(name, category, price, quantity, status,path);
                 MongoCollection collection = db.GetCollection<Client>("Product");
                 collection.Insert<Product>(product);
                 ret = true;
@@ -72,7 +72,7 @@ namespace DATA
             return ret;
         }//end deleteProduct
 
-        public Boolean updateProduct(String name, String category, int price, int quantity, String status)
+        public Boolean updateProduct(String name, String category, int price, int quantity, String status, String path)
         {
             Boolean ret = false;// return variable
             try
@@ -89,6 +89,7 @@ namespace DATA
                 product.price = price;
                 product.quantity = quantity;
                 product.status = status;
+                product.path = path;
                 collection.Save(product);
                 ret = true;
             }//try
