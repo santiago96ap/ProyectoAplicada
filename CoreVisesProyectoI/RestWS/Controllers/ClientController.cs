@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using BUSINESS;
+using DOMAIN;
 namespace RestWS.Controllers
 {
     public class ClientController : ApiController
@@ -21,10 +22,10 @@ namespace RestWS.Controllers
             return "value";
         }
 
-        // POST api/values
-        public void Post([FromBody]string value)
-        {
-        }
+        //// POST api/values
+        //public void Post([FromBody]string value)
+        //{
+        //}
 
         // PUT api/values/5
         public void Put(int id, [FromBody]string value)
@@ -37,10 +38,11 @@ namespace RestWS.Controllers
         }
 
         // POST REGISTER CLIENT api/values
-        public Boolean Register([FromBody]string name, [FromBody]string mail, [FromBody]string pass, [FromBody]string card)
+        [HttpPost]
+        public Boolean Register([FromBody]Client client)
         {
             ClientBusiness cb = new ClientBusiness();
-            return cb.insertClientRest(name,mail,pass,card);            
+            return cb.insertClientRest(client.name, client.mail, client.pass, client.card);            
         }
     }
 }
