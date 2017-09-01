@@ -31,7 +31,7 @@ namespace BUSINESS {
 
         public Boolean insertClientRest(string name, string mail, string pass, string card)
         {          
-            return cd.insertClient(name, mail, pass, card);
+            return cd.insertClient(name, mail, pass, card);//
         }//end insertClientRest
 
         public Boolean loginClient(string email, string pass) {
