@@ -11,10 +11,12 @@ namespace RestWS.Controllers
     public class ClientController : ApiController
     {
         // GET api/values
+     
         public IEnumerable<string> Get()
         {
             return new string[] { "value1", "value2" };
         }
+
 
         // GET api/values/5
         public string Get(int id)
@@ -22,10 +24,15 @@ namespace RestWS.Controllers
             return "value";
         }
 
-        //// POST api/values
-        //public void Post([FromBody]string value)
-        //{
-        //}
+        // POST api/values        
+        [HttpPost]
+        public Boolean Post([FromBody]String name, [FromBody] String mail, [FromBody]String pass, [FromBody] String card)
+        {
+            ClientBusiness cb = new ClientBusiness();
+            return cb.insertClientRest(name,mail,pass,card);
+            //cb.insertClientRest(c.name, c.mail, c.pass, c.card);
+
+        }
 
         // PUT api/values/5
         public void Put(int id, [FromBody]string value)
@@ -37,12 +44,7 @@ namespace RestWS.Controllers
         {
         }
 
-        // POST REGISTER CLIENT api/values
-        [HttpPost]
-        public Boolean Register([FromBody]Client client)
-        {
-            ClientBusiness cb = new ClientBusiness();
-            return cb.insertClientRest(client.name, client.mail, client.pass, client.card);            
-        }
+       
+       
     }
 }

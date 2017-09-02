@@ -29,7 +29,7 @@ namespace BUSINESS {
            return cd.insertClient(nameDecrypted, mailDecrypted, passDecrypted, cardDecrypted);
         }//end insertClient
 
-        public Boolean insertClientRest(string name, string mail, string pass, string card)
+        public Boolean insertClientRest(String name, String mail, String pass, String card)
         {          
             return cd.insertClient(name, mail, pass, card);//
         }//end insertClientRest
