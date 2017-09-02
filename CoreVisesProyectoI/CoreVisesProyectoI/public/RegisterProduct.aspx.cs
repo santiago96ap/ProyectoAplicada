@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BUSINESS;
+using UTIL;
 
 namespace CoreVisesProyectoI{
 	public partial class RegisterProduct : System.Web.UI.Page{
@@ -11,14 +13,66 @@ namespace CoreVisesProyectoI{
            
         }//End Page_Load
         protected void Button2_Click(object sender, EventArgs e){
-            if (FileUpload1.HasFile){
-                //si hay una archivo.
-                string nombreArchivo = FileUpload1.FileName;
-                string ruta = "~/Fotos/" + nombreArchivo;
-                FileUpload1.SaveAs(Server.MapPath(ruta));
 
-                Label1.Text = Environment.NewLine + ruta;
-            }//End if (FileUpload1.HasFile)
+            try{
+                if (FileUpload1.HasFile){
+                    // Se verifica que la extensión sea de un formato válido
+                    string ext = FileUpload1.PostedFile.FileName;
+                    ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
+                    string[] formatos = new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
+                    if (Array.IndexOf(formatos, ext) < 0){
+                        Label1.Text = "Formato de imagen inválido.";
+                    }else {
+                        String paht = saveImagen(FileUpload1.PostedFile);
+                        
+                        ProductBusiness pb = new ProductBusiness();
+                        RSA rsa = new RSA();
+
+                        byte[] nameBytes = rsa.EncryptText(tbNameRegisterProduct.Text, rsa.PublicKey);
+                        byte[] CategoryBytes = rsa.EncryptText(tbCategoryRegisterProduct.Text, rsa.PublicKey);
+                        byte[] priceBytes = rsa.EncryptText(tbPriceRegisterProduct.Text, rsa.PublicKey);
+                        byte[] quantityBytes = rsa.EncryptText(tbQuantityRegisterProduct.Text, rsa.PublicKey);
+                        byte[] stateBytes = rsa.EncryptText(tbStateRegisterProduct.Text, rsa.PublicKey);
+                        byte[] pathBytes = rsa.EncryptText(paht, rsa.PublicKey);
+
+                        string nameDecrypted = Convert.ToBase64String(nameBytes);
+                        string categoryDecrypted = Convert.ToBase64String(CategoryBytes);
+                        string priceDecrypted = Convert.ToBase64String(priceBytes);
+                        string quantityDecrypted = Convert.ToBase64String(quantityBytes);
+                        string stateDecrypted = Convert.ToBase64String(stateBytes);
+                        string pathDecrypted = Convert.ToBase64String(pathBytes);
+
+                        pb.insertProduct(nameDecrypted, categoryDecrypted, int.Parse(priceDecrypted), int.Parse(quantityDecrypted), stateDecrypted, pathDecrypted);
+                        Label1.Text = "Registro de producto exitoso";
+                    }//End if (Array.IndexOf(formatos, ext) < 0)
+                } else
+                    Label1.Text =  "Seleccione un archivo del disco duro.";
+            }catch (Exception ex){
+                Label1.Text = ex.Message;
+            }//End catch (Exception ex)
         }//End Button2_Click
+
+        public String saveImagen(HttpPostedFile file) {            
+            string savePath = "c:\\temp\\uploads\\";
+            string fileName = FileUpload1.FileName;
+            string pathToCheck = savePath + fileName;
+            string tempfileName = "";
+            if (System.IO.File.Exists(pathToCheck)){
+                int counter = 2;
+                while (System.IO.File.Exists(pathToCheck)){
+                    tempfileName = counter.ToString() + fileName;
+                    pathToCheck = savePath + tempfileName;
+                    counter++;
+                }//End while (System.IO.File.Exists(pathToCheck))
+                fileName = tempfileName;
+                Label1.Text = "A file with the same name already exists. Your file was saved as " + fileName;
+            }else{
+                // Notify the user that the file was saved successfully.
+                Label1.Text = "Your file was uploaded successfully.";
+            }//End if-else (System.IO.File.Exists(pathToCheck))
+            savePath += fileName;
+            FileUpload1.SaveAs(savePath);
+            return savePath;
+        }//End saveImagen
     }//End class RegisterProduct
 }//End namespace CoreVisesProyectoI
