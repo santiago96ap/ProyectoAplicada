@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DATA", "DATA\DATA.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UTIL", "UTIL\UTIL.csproj", "{4940AC08-5876-4B37-BE82-75F3386A12B6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestWS", "RestWS\RestWS.csproj", "{2EF55F91-4DAD-4F47-BFB8-23B363BC1D7C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{4940AC08-5876-4B37-BE82-75F3386A12B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4940AC08-5876-4B37-BE82-75F3386A12B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4940AC08-5876-4B37-BE82-75F3386A12B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2EF55F91-4DAD-4F47-BFB8-23B363BC1D7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2EF55F91-4DAD-4F47-BFB8-23B363BC1D7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2EF55F91-4DAD-4F47-BFB8-23B363BC1D7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2EF55F91-4DAD-4F47-BFB8-23B363BC1D7C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

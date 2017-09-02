@@ -13,31 +13,31 @@
                             <div class="core-slider_viewport">
                                 <div class="core-slider_list">
                                     <div class="core-slider_item">
-                                        <img src="images/t1.jpg" class="img-responsive" alt="">
+                                        <img src="images/t1.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/t2.jpg" class="img-responsive" alt="">
+                                        <img src="images/t2.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/t3.jpg" class="img-responsive" alt="">
+                                        <img src="images/t3.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/t4.jpg" class="img-responsive" alt="">
+                                        <img src="images/t4.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/t5.jpg" class="img-responsive" alt="">
+                                        <img src="images/t5.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/t6.jpg" class="img-responsive" alt="">
+                                        <img src="images/t6.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/t7.jpg" class="img-responsive" alt="">
+                                        <img src="images/t7.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/t8.jpg" class="img-responsive" alt="">
+                                        <img src="images/t8.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/t9.jpg" class="img-responsive" alt="">
+                                        <img src="images/t9.jpg" class="img-responsive" alt=""/>
                                     </div>
                                 </div>
                             </div>
@@ -66,19 +66,19 @@
                             <div class="core-slider_viewport">
                                 <div class="core-slider_list">
                                     <div class="core-slider_item">
-                                        <img src="images/s1.jpg" class="img-responsive" alt="">
+                                        <img src="images/s1.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/s2.jpg" class="img-responsive" alt="">
+                                        <img src="images/s2.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/s3.jpg" class="img-responsive" alt="">
+                                        <img src="images/s3.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/s4.jpg" class="img-responsive" alt="">
+                                        <img src="images/s4.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/s5.jpg" class="img-responsive" alt="">
+                                        <img src="images/s5.jpg" class="img-responsive" alt=""/>
                                     </div>
                                 </div>
                             </div>
@@ -107,16 +107,16 @@
                             <div class="core-slider_viewport">
                                 <div class="core-slider_list">
                                     <div class="core-slider_item">
-                                        <img src="images/h1.jpg" class="img-responsive" alt="">
+                                        <img src="images/h1.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/h2.jpg" class="img-responsive" alt="">
+                                        <img src="images/h2.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/h3.jpg" class="img-responsive" alt="">
+                                        <img src="images/h3.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/h4.jpg" class="img-responsive" alt="">
+                                        <img src="images/h4.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
                                         <img src="images/h5.jpg" class="img-responsive" alt="">
@@ -147,16 +147,16 @@
                             <div class="core-slider_viewport">
                                 <div class="core-slider_list">
                                     <div class="core-slider_item">
-                                        <img src="images/j1.jpg" class="img-responsive" alt="">
+                                        <img src="images/j1.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/j2.jpg" class="img-responsive" alt="">
+                                        <img src="images/j2.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/j3.jpg" class="img-responsive" alt="">
+                                        <img src="images/j3.jpg" class="img-responsive" alt=""/>
                                     </div>
                                     <div class="core-slider_item">
-                                        <img src="images/j4.jpg" class="img-responsive" alt="">
+                                        <img src="images/j4.jpg" class="img-responsive" alt=""/>
                                     </div>
                                 </div>
                             </div>
@@ -187,7 +187,7 @@
             <div class="core-slider_viewport">
                 <div class="core-slider_list">
                     <div class="core-slider_item">
-                        <img src="images/b1.jpg" class="img-responsive" alt="">
+                        <img src="images/b1.jpg" class="img-responsive" alt=""/>
                     </div>
                 </div>
             </div>
@@ -200,7 +200,7 @@
             <div class="latest-grids">
                 <div class="col-md-4 latest-grid">
                     <div class="latest-top">
-                        <img src="images/l1.jpg" class="img-responsive"  alt="">
+                        <img src="images/l1.jpg" class="img-responsive"  alt=""/>
                         <div class="latest-text">
                             <h4>Men</h4>
                         </div>
@@ -208,7 +208,7 @@
                 </div>
                 <div class="col-md-4 latest-grid">
                     <div class="latest-top">
-                        <img  src="images/l2.jpg" class="img-responsive"  alt="">
+                        <img  src="images/l2.jpg" class="img-responsive"  alt=""/>
                         <div class="latest-text">
                             <h4>Shoes</h4>
                         </div>
@@ -216,7 +216,7 @@
                 </div>
                 <div class="col-md-4 latest-grid">
                     <div class="latest-top">
-                        <img  src="images/l3.jpg" class="img-responsive"  alt="">
+                        <img  src="images/l3.jpg" class="img-responsive"  alt=""/>
                         <div class="latest-text">
                             <h4>Women</h4>
                         </div>
@@ -227,7 +227,7 @@
             <div class="latest-grids">
                 <div class="col-md-4 latest-grid">
                     <div class="latest-top">
-                        <img  src="images/l4.jpg" class="img-responsive"  alt="">
+                        <img  src="images/l4.jpg" class="img-responsive"  alt=""/>
                         <div class="latest-text">
                             <h4>Jewelry</h4>
                         </div>
@@ -235,7 +235,7 @@
                 </div>
                 <div class="col-md-4 latest-grid">
                     <div class="latest-top">
-                        <img  src="images/l5.jpg" class="img-responsive"  alt="">
+                        <img  src="images/l5.jpg" class="img-responsive"  alt=""/>
                         <div class="latest-text">
                             <h4>Bag</h4>
                         </div>
@@ -243,7 +243,7 @@
                 </div>
                 <div class="col-md-4 latest-grid">
                     <div class="latest-top">
-                        <img  src="images/l6.jpg" class="img-responsive"  alt="">
+                        <img  src="images/l6.jpg" class="img-responsive"  alt=""/>
                         <div class="latest-text">
                             <h4>Hats</h4>
                         </div>
@@ -262,7 +262,7 @@
                         <div  class="grid-arrival">
                             <figure>		
                                 <div class="grid-img">
-                                    <img  src="images/na1.jpg" class="img-responsive" alt="">
+                                    <img  src="images/na1.jpg" class="img-responsive" alt=""/>
                                 </div>	
                             </figure>	
                         </div>
@@ -282,7 +282,7 @@
                         <div  class="grid-arrival">
                             <figure>		
                                 <div class="grid-img">
-                                    <img  src="images/na2.jpg" class="img-responsive" alt="">
+                                    <img  src="images/na2.jpg" class="img-responsive" alt=""/>
                                 </div>
                             </figure>	
                         </div>
@@ -301,7 +301,7 @@
                         <div  class="grid-arrival">
                             <figure>		
                                 <div class="grid-img">
-                                    <img  src="images/na3.jpg" class="img-responsive" alt="">
+                                    <img  src="images/na3.jpg" class="img-responsive" alt=""/>
                                 </div>		
                             </figure>	
                         </div>
@@ -320,7 +320,7 @@
                         <div  class="grid-arrival">
                             <figure>		
                                 <div class="grid-img">
-                                    <img  src="images/na4.jpg" class="img-responsive" alt="">
+                                    <img  src="images/na4.jpg" class="img-responsive" alt=""/>
                                 </div>	
                             </figure>	
                         </div>

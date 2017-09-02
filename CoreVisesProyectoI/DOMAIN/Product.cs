@@ -16,6 +16,7 @@ namespace DOMAIN
         public int price { get; set; }
         public int quantity { get; set; }
         public String status { get; set; }
+        public String path { get; set;  }
 
         public Product()
         {
@@ -24,21 +25,23 @@ namespace DOMAIN
             this.price = 0;
             this.quantity = 0;
             this.status = " ";
+            this.path = "";
         }//build default
 
-        public Product(String name, String category, int price, int quantity, String status)
+        public Product(String name, String category, int price, int quantity, String status, String path)
         {
             this.name = name;
             this.category = category;
             this.price = price;
             this.quantity = quantity;
             this.status = status;
+            this.path = path;
         }//build overload
 
         public string toString()
         {
             return "ID: " + this._id + "\nName: " + this.name + "\nCategory: " + this.category + "\nPrice: " + this.price +
-                "\nQuantity: " + this.quantity + "\nStatus: " + this.status;
+                "\nQuantity: " + this.quantity + "\nStatus: " + this.status + "\nPath:" + this.path;
         }//toString 
 
 

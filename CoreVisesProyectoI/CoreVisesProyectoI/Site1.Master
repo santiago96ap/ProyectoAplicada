@@ -73,8 +73,13 @@
                     </div>
                     <div class="top-right">
                         <ul>
-                            <li><a href="login.aspx">Log in</a></li>
-                            <li><a href="?controlador=Default&accion=register">Sign in</a></li>
+                            <%if (Session["usuario"] == null){
+                                Session["usuario"] = "N";
+                            }if (Session["usuario"].ToString().Equals("N")){ %>
+                                <li><a href="login.aspx">Log in</a></li>
+                         <% }else{%>
+                                <li><a href="Login.aspx">Logout</a></li>
+                        <%  } %>    
                         </ul>
                     </div>
                     <div class="clearfix"></div>
@@ -84,7 +89,7 @@
                 <div class="container">
                     <div class="logo-nav">
                         <div class="logo-nav-left">
-                            <h1><a href="?controlador=Default&accion=index"><img src="images/image3688.png" alt=" "/></a></h1>
+                            <h1><a href="Default.aspx"><img src="images/image3688.png" alt=" "/></a></h1>
                         </div>
                         <div class="logo-nav-left1">
                             <nav class="navbar navbar-default">
@@ -139,6 +144,15 @@
                                             </ul>
                                         </li>
                                         <li><a href="?controlador=Default&accion=mail">Mail Us</a></li>
+                                         <%if (Session["usuario"] == null){
+                                            Session["usuario"] = "N";
+                                        }if (Session["usuario"].ToString().Equals("N")){ %>
+                                            
+                                     <% }else{%>
+                                             <li class="active"><a href="Register.aspx" class="act">Register Admin</a></li>
+                                             <li class="active"><a href="RegisterProduct.aspx" class="act">Register Product</a></li>
+                                        </li>
+                                    <%  } %>   
                                     </ul>
                                 </div>
                             </nav>
@@ -177,8 +191,13 @@
             <div class="col-md-3 footer-grid">
                 <h4>My Account</h4>
                 <ul>
-                    <li><a href="?controlador=Default&accion=login">Login</a></li>
-                    <li><a href="?controlador=Default&accion=register"> Create Account </a></li>
+                    <%if (Session["usuario"] == null){
+                                Session["usuario"] = "N";
+                            }if (Session["usuario"].ToString().Equals("N")){ %>
+                                <li><a href="Login.aspx">Login</a></li>
+                         <% }else{%>
+                                <li><a href="Login.aspx">Logout</a></li>
+                        <%  } %>   
                 </ul>
             </div>
             <div class="col-md-3 footer-grid">

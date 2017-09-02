@@ -29,6 +29,11 @@ namespace BUSINESS {
            return cd.insertClient(nameDecrypted, mailDecrypted, passDecrypted, cardDecrypted);
         }//end insertClient
 
+        public Boolean insertClientRest(String name, String mail, String pass, String card)
+        {          
+            return cd.insertClient(name, mail, pass, card);//
+        }//end insertClientRest
+
         public Boolean loginClient(string email, string pass) {
             RSA rsa = new RSA();
             byte[] mailBytes = rsa.DecryptText(email, rsa.PrivateKey);
