@@ -4,6 +4,8 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using BUSINESS;
+using UTIL;
 
 namespace CoreVisesProyectoI{
 	public partial class RegisterProduct : System.Web.UI.Page{
@@ -22,22 +24,32 @@ namespace CoreVisesProyectoI{
                         Label1.Text = "Formato de imagen inválido.";
                     }else {
                         String paht = saveImagen(FileUpload1.PostedFile);
-                        Label1.Text = paht;
+                        
+                        ProductBusiness pb = new ProductBusiness();
+                        RSA rsa = new RSA();
+
+                        byte[] nameBytes = rsa.EncryptText(tbNameRegisterProduct.Text, rsa.PublicKey);
+                        byte[] CategoryBytes = rsa.EncryptText(tbCategoryRegisterProduct.Text, rsa.PublicKey);
+                        byte[] priceBytes = rsa.EncryptText(tbPriceRegisterProduct.Text, rsa.PublicKey);
+                        byte[] quantityBytes = rsa.EncryptText(tbQuantityRegisterProduct.Text, rsa.PublicKey);
+                        byte[] stateBytes = rsa.EncryptText(tbStateRegisterProduct.Text, rsa.PublicKey);
+                        byte[] pathBytes = rsa.EncryptText(paht, rsa.PublicKey);
+
+                        string nameDecrypted = Convert.ToBase64String(nameBytes);
+                        string categoryDecrypted = Convert.ToBase64String(CategoryBytes);
+                        string priceDecrypted = Convert.ToBase64String(priceBytes);
+                        string quantityDecrypted = Convert.ToBase64String(quantityBytes);
+                        string stateDecrypted = Convert.ToBase64String(stateBytes);
+                        string pathDecrypted = Convert.ToBase64String(pathBytes);
+
+                        pb.insertProduct(nameDecrypted, categoryDecrypted, int.Parse(priceDecrypted), int.Parse(quantityDecrypted), stateDecrypted, pathDecrypted);
+                        Label1.Text = "Registro de producto exitoso";
                     }//End if (Array.IndexOf(formatos, ext) < 0)
                 } else
                     Label1.Text =  "Seleccione un archivo del disco duro.";
             }catch (Exception ex){
                 Label1.Text = ex.Message;
             }//End catch (Exception ex)
-
-            /*if (FileUpload1.HasFile){
-                //si hay una archivo.
-                string nombreArchivo = FileUpload1.FileName;
-                string ruta = "~/Fotos/" + nombreArchivo;
-                FileUpload1.SaveAs(Server.MapPath(ruta));
-
-                Label1.Text = Environment.NewLine + ruta;
-            }//End if (FileUpload1.HasFile)*/
         }//End Button2_Click
 
         public String saveImagen(HttpPostedFile file) {            
