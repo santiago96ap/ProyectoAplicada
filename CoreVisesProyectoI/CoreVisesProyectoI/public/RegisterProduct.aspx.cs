@@ -12,6 +12,7 @@ namespace CoreVisesProyectoI{
         protected void Page_Load(object sender, EventArgs e){
            
         }//End Page_Load
+
         protected void Button2_Click(object sender, EventArgs e){
 
             try{
@@ -21,7 +22,7 @@ namespace CoreVisesProyectoI{
                     ext = ext.Substring(ext.LastIndexOf(".") + 1).ToLower();
                     string[] formatos = new string[] { "jpg", "jpeg", "bmp", "png", "gif" };
                     if (Array.IndexOf(formatos, ext) < 0){
-                        Label1.Text = "Formato de imagen inválido.";
+                        Label1.Text = "Invalid image format.";
                     }else {
                         String paht = saveImagen(FileUpload1.PostedFile);
                         
@@ -42,11 +43,11 @@ namespace CoreVisesProyectoI{
                         string stateDecrypted = Convert.ToBase64String(stateBytes);
                         string pathDecrypted = Convert.ToBase64String(pathBytes);
 
-                        pb.insertProduct(nameDecrypted, categoryDecrypted, int.Parse(priceDecrypted), int.Parse(quantityDecrypted), stateDecrypted, pathDecrypted);
-                        Label1.Text = "Registro de producto exitoso";
+                        pb.insertProduct(nameDecrypted, categoryDecrypted, priceDecrypted, quantityDecrypted, stateDecrypted, pathDecrypted);
+                        Label1.Text = "Successful product registration.";
                     }//End if (Array.IndexOf(formatos, ext) < 0)
                 } else
-                    Label1.Text =  "Seleccione un archivo del disco duro.";
+                    Label1.Text = "Select a file from the hard disk.";
             }catch (Exception ex){
                 Label1.Text = ex.Message;
             }//End catch (Exception ex)
@@ -66,12 +67,14 @@ namespace CoreVisesProyectoI{
                 }//End while (System.IO.File.Exists(pathToCheck))
                 fileName = tempfileName;
                 Label1.Text = "A file with the same name already exists. Your file was saved as " + fileName;
+                savePath += fileName;
+                FileUpload1.SaveAs(savePath);
             }else{
                 // Notify the user that the file was saved successfully.
                 Label1.Text = "Your file was uploaded successfully.";
+                savePath += fileName;
+                FileUpload1.SaveAs(savePath);
             }//End if-else (System.IO.File.Exists(pathToCheck))
-            savePath += fileName;
-            FileUpload1.SaveAs(savePath);
             return savePath;
         }//End saveImagen
     }//End class RegisterProduct

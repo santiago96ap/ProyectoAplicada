@@ -26,7 +26,7 @@ namespace BUSINESS
             this.productData = new ProductData();
         }//constructor
 
-        public Boolean insertProduct(String name, String category, int price, int quantity, String status, String path)
+        public Boolean insertProduct(String name, String category, String price, String quantity, String status, String path)
         {
 
             RSA rsa = new RSA();
