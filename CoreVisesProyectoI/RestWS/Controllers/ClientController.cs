@@ -29,7 +29,7 @@ namespace RestWS.Controllers
         public Boolean Post([FromBody]String name, [FromBody] String mail, [FromBody]String pass, [FromBody] String card)
         {
             ClientBusiness cb = new ClientBusiness();
-            return cb.insertClientRest(name,mail,pass,card);
+            return cb.insertClientRest(name,mail,pass,card);//
             //cb.insertClientRest(c.name, c.mail, c.pass, c.card);
 
         }
