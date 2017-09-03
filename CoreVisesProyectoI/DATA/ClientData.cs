@@ -13,7 +13,6 @@ namespace DATA {
         public int insertClient(String name, String mail,String pass,String card) {
             int ret = 0;
             try {
-
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
                 MongoServer ms = mc.GetServer();
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
@@ -88,8 +87,8 @@ namespace DATA {
             return ret;
         }//end deleteClient
 
-        public Boolean updateClient(String name,String mail,String pass,String card) {
-            Boolean ret = false;
+        public int updateClient(String name,String mail,String pass,String card) {
+            int ret = 0;
             try {
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
                 MongoServer ms = mc.GetServer();
@@ -102,9 +101,9 @@ namespace DATA {
                 client.pass = pass;
                 client.card = card;          
                 collection.Save(client);
-                ret = true;
-            }catch (Exception error){
-                ret = true;
+                ret = 1;
+            } catch (Exception error){
+                ret = 0;
             }//try-catch
             return ret;
         }//end updateClient

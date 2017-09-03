@@ -30,5 +30,11 @@ namespace CoreVisesProyectoI{
             return cb.insertClient(name, mail, pass, card);            
         }//End RegisterClient
 
+        [WebMethod]
+        public int UpdateClient(string name, string mail, string pass, string card) {
+            ClientBusiness cb = new ClientBusiness();
+            return cb.updateClient(name, mail, pass, card);
+        }//UpdateClient
+
     }//End class WebServiceLoginSoap
 }//End namespace CoreVisesProyectoI

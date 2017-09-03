@@ -40,21 +40,27 @@ namespace BUSINESS {
             string mailDecrypted = Encoding.ASCII.GetString(mailBytes);
             string passDecrypted = Encoding.ASCII.GetString(passBytes);
             return cd.loginClient(mailDecrypted, passDecrypted);
-        }
+        }//end loginClient
 
-        public List<Client> selectClient()
-        {
+        public List<Client> selectClient() {
             return cd.selectClient();
         }//end insertClient
 
-        public Boolean deleteClient(String name)
-        {
+        public Boolean deleteClient(String name) {
             return cd.deleteClient(name);
         }//end deleteClient
 
-        public Boolean updateClient(String name, String mail, String pass,String card)
-        {
-            return cd.updateClient(name, mail, pass,card);
+        public int updateClient(String name, String mail, String pass,String card) {
+            RSA rsa = new RSA();
+            byte[] nameBytes = rsa.DecryptText(name, rsa.PrivateKey);
+            byte[] mailBytes = rsa.DecryptText(mail, rsa.PrivateKey);
+            byte[] passBytes = rsa.DecryptText(pass, rsa.PrivateKey);
+            byte[] cardBytes = rsa.DecryptText(card, rsa.PrivateKey);
+            string nameDecrypted = Encoding.ASCII.GetString(nameBytes);
+            string mailDecrypted = Encoding.ASCII.GetString(mailBytes);
+            string passDecrypted = Encoding.ASCII.GetString(passBytes);
+            string cardDecrypted = Encoding.ASCII.GetString(cardBytes);
+            return cd.updateClient(nameDecrypted, mailDecrypted, passDecrypted, cardDecrypted);
         }//end updateClient
 
     }//end class

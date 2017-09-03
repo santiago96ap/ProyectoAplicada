@@ -46,7 +46,7 @@ namespace CoreVisesProyectoI{
 
         protected void Button2_Click(object sender, EventArgs e){
             ClientBusiness clientBusiness = new ClientBusiness();
-            if (clientBusiness.updateClient(tbNameUpdateDeleteClient.Text, this.mail, tbPassUpdateDeleteClient.Text, tbCardUpdateDeleteClient.Text)) {
+            if ((clientBusiness.updateClient(tbNameUpdateDeleteClient.Text, this.mail, tbPassUpdateDeleteClient.Text, tbCardUpdateDeleteClient.Text))==1) {
                 Label1.Text = "Successful update.";
             }//End if (clientBusiness.updateClient(tbNameUpdateDeleteClient.Text, this.mail, tbPassUpdateDeleteClient.Text, tbCardUpdateDeleteClient.Text)) 
         }//End Button2_Click
