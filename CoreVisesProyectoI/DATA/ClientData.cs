@@ -17,19 +17,29 @@ namespace DATA {
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
                 MongoServer ms = mc.GetServer();
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
-                var client = new Client(name,mail,pass,card);                
-                MongoCollection collection = db.GetCollection<Client>("Client");
-                collection.Insert<Client>(client);
-                ret = true;
-            }//try
-            catch (Exception error) {
+
+                List<Client> clients = selectClient();
+                foreach (Client client in clients) {
+                    if (client.mail.Equals(mail)) {
+                        ret = false;
+                        break;
+                    }else {
+                        ret = true;
+                    }//End if (item.mail.Equals(mail) && item.pass.Equals(pass))
+                }//End foreach (Client item in clients)
+
+                if (ret) {
+                    var client = new Client(name,mail,pass,card);                
+                    MongoCollection collection = db.GetCollection<Client>("Client");
+                    collection.Insert<Client>(client);
+                }//Si es true, lo puede insertar.
+            }catch (Exception error) {
                 ret = false;
-            }//catch
+            }//try-catch
             return ret;
         }//end insertClient
 
-        public List<Client> selectClient()
-        {
+        public List<Client> selectClient() {
               
             MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
             MongoServer ms = mc.GetServer();
@@ -48,7 +58,6 @@ namespace DATA {
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
                 ms.Connect();
                 MongoCollection collection = db.GetCollection<Client>("Client");
-                Client client = new Client();
                 List<Client> clients = selectClient();
                 foreach (Client item in clients){
                     if (item.mail.Equals(mail) && item.pass.Equals(pass)) {
@@ -66,8 +75,7 @@ namespace DATA {
 
         public Boolean deleteClient(String name) {
             Boolean ret = false;
-            try
-            {
+            try {
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
                 MongoServer ms = mc.GetServer();
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
@@ -76,19 +84,15 @@ namespace DATA {
                 var query = Query.EQ("mail", name); // comparacion para hacer la eliminacion del documento de la bd
                 collection.Remove(query);                
                 ret = true;
-            }//try
-            catch (Exception error)
-            {
+            }catch (Exception error) {
                 ret = true;
-            }//catch
+            }//try-catch
             return ret;
         }//end deleteClient
 
-        public Boolean updateClient(String name,String mail,String pass,String card)
-        {
+        public Boolean updateClient(String name,String mail,String pass,String card) {
             Boolean ret = false;
-            try
-            {
+            try {
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
                 MongoServer ms = mc.GetServer();
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
@@ -101,11 +105,9 @@ namespace DATA {
                 client.card = card;          
                 collection.Save(client);
                 ret = true;
-            }//try
-            catch (Exception error)
-            {
+            }catch (Exception error){
                 ret = true;
-            }//catch
+            }//try-catch
             return ret;
         }//end updateClient
     }//end class
