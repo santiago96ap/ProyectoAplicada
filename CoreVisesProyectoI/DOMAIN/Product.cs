@@ -14,12 +14,13 @@ namespace DOMAIN
         public String name { get; set; }
         public String category { get; set; }
         public int price { get; set; }
+        public string priceS { get; set; }
         public int quantity { get; set; }
+        public string quantityS { get; set; }
         public String status { get; set; }
         public String path { get; set;  }
 
-        public Product()
-        {
+        public Product() {
             this.name = " ";
             this.category = " ";
             this.price = 0;
@@ -28,8 +29,7 @@ namespace DOMAIN
             this.path = "";
         }//build default
 
-        public Product(String name, String category, int price, int quantity, String status, String path)
-        {
+        public Product(String name, String category, int price, int quantity, String status, String path) {
             this.name = name;
             this.category = category;
             this.price = price;

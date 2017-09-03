@@ -62,8 +62,8 @@ namespace BUSINESS {
                 if ((product.category.Equals(category)) || (category.Equals("All"))) {
                     product.name = Convert.ToBase64String(rsa.EncryptText(product.name, rsa.PublicKey));
                     product.category = Convert.ToBase64String(rsa.EncryptText(product.category, rsa.PublicKey));
-                    product.price = int.Parse(Convert.ToBase64String(rsa.EncryptText(product.price.ToString(), rsa.PublicKey)));
-                    product.quantity = int.Parse(Convert.ToBase64String(rsa.EncryptText(product.quantity.ToString(), rsa.PublicKey)));
+                    product.priceS = Convert.ToBase64String(rsa.EncryptText(product.price.ToString(), rsa.PublicKey));
+                    product.quantityS = Convert.ToBase64String(rsa.EncryptText(product.quantity.ToString(), rsa.PublicKey));
                     product.status = Convert.ToBase64String(rsa.EncryptText(product.status, rsa.PublicKey));
                     product.path = Convert.ToBase64String(rsa.EncryptText(product.path, rsa.PublicKey));
                     encryptedProducts.Add(product);

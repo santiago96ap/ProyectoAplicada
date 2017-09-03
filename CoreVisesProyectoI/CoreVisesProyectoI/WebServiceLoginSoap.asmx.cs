@@ -43,7 +43,7 @@ namespace CoreVisesProyectoI{
         public String getProducts(String category) {
             ProductBusiness pb = new ProductBusiness();
             List<Product> products = new List<Product>();
-            products = pb.selectProduct();
+            products = pb.getProducts(category);
             return new JavaScriptSerializer().Serialize(products);
         }//allClients
 
