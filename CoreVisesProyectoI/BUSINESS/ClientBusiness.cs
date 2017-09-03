@@ -53,9 +53,9 @@ namespace BUSINESS {
             return cd.deleteClient(name);
         }//end deleteClient
 
-        public Boolean updateClient(String name, String mail, String pass)
+        public Boolean updateClient(String name, String mail, String pass,String card)
         {
-            return cd.updateClient(name, mail, pass);
+            return cd.updateClient(name, mail, pass,card);
         }//end updateClient
 
     }//end class

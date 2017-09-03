@@ -90,6 +90,7 @@
     <Content Include="public\Login.aspx" />
     <Content Include="public\Register.aspx" />
     <Content Include="public\RegisterProduct.aspx" />
+    <Content Include="public\UpdateDeleteClient.aspx" />
     <Content Include="public\UpdateDeleteProducts.aspx" />
     <Content Include="WebServiceLoginSoap.asmx" />
     <None Include="Properties\PublishProfiles\PruebaWebPagina.pubxml" />
@@ -136,6 +137,13 @@
     </Compile>
     <Compile Include="public\RegisterProduct.aspx.designer.cs">
       <DependentUpon>RegisterProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="public\UpdateDeleteClient.aspx.cs">
+      <DependentUpon>UpdateDeleteClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="public\UpdateDeleteClient.aspx.designer.cs">
+      <DependentUpon>UpdateDeleteClient.aspx</DependentUpon>
     </Compile>
     <Compile Include="public\UpdateDeleteProducts.aspx.cs">
       <DependentUpon>UpdateDeleteProducts.aspx</DependentUpon>

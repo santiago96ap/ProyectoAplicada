@@ -73,7 +73,7 @@ namespace DATA {
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
                 ms.Connect(); 
                 MongoCollection collection = db.GetCollection<Client>("Client");                
-                var query = Query.EQ("name", name); // comparacion para hacer la eliminacion del documento de la bd
+                var query = Query.EQ("mail", name); // comparacion para hacer la eliminacion del documento de la bd
                 collection.Remove(query);                
                 ret = true;
             }//try
@@ -84,7 +84,7 @@ namespace DATA {
             return ret;
         }//end deleteClient
 
-        public Boolean updateClient(String name,String mail,String pass)
+        public Boolean updateClient(String name,String mail,String pass,String card)
         {
             Boolean ret = false;
             try
@@ -94,10 +94,11 @@ namespace DATA {
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
                 ms.Connect();
                 MongoCollection collection = db.GetCollection<Client>("Client");
-                var query = Query.EQ("name", name); // comparacion para hacer la eliminacion del documento de la bd                                
+                var query = Query.EQ("mail", mail); // comparacion para hacer la eliminacion del documento de la bd                                
                 var client = collection.FindOneAs<Client>(query);
-                client.mail = mail;
-                client.pass = pass;                
+                client.name = name;
+                client.pass = pass;
+                client.card = card;          
                 collection.Save(client);
                 ret = true;
             }//try
