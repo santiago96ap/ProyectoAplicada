@@ -18,6 +18,12 @@ namespace RestWS.Controllers
             return pb.selectProduct();
         }
 
+
+        public List<Product> getProducts()
+        {
+            ProductBusiness p = new ProductBusiness();
+            return p.selectProduct(); 
+        } 
         // GET api/values/5
         public string Get(int id)
         {
