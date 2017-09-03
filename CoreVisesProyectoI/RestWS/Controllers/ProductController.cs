@@ -12,13 +12,6 @@ namespace RestWS.Controllers
     public class ProductController : ApiController
     {
         // GET api/values
-        public List<Product> Get()
-        {
-            ProductBusiness pb = new ProductBusiness();
-            return pb.selectProduct();//
-        }
-
-
         public List<Product> getProducts()
         {
             ProductBusiness p = new ProductBusiness();
