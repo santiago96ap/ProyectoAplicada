@@ -34,8 +34,11 @@ namespace RestWS.Controllers
         }//
 
         // DELETE api/values/5
-        public void Delete(int id)
+        public int Delete(string name)
         {
+            ProductBusiness pb = new ProductBusiness();
+            return pb.deleteProduct(name);
+
         }
     }
 }

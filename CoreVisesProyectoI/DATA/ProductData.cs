@@ -51,9 +51,9 @@ namespace DATA
 
         }//insertProduct
 
-        public Boolean deleteProduct(String name)
+        public int deleteProduct(String name)
         {
-            Boolean ret = false;// return variable
+            int ret = 0;// return variable
             try
             {
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
@@ -63,11 +63,11 @@ namespace DATA
                 MongoCollection collection = db.GetCollection<Product>("Product");
                 var query = Query.EQ("name", name); // comparacion para hacer la eliminacion del documento de la bd
                 collection.Remove(query);
-                ret = true;
+                ret = 1;//
             }//try
             catch (Exception error)
             {
-                ret = true;
+                ret = 0;
             }//catch
             return ret;
         }//end deleteProduct

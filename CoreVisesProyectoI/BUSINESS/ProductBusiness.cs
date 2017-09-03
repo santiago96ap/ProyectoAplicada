@@ -54,7 +54,7 @@ namespace BUSINESS
             return productData.selectProduct();
         }//end insertClient
 
-        public Boolean deleteProduct(String name)
+        public int deleteProduct(String name)
         {
             return productData.deleteProduct(name);
         }//end deleteClient
