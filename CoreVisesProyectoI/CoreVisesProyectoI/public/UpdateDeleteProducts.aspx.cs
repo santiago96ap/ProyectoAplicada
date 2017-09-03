@@ -14,6 +14,7 @@ namespace CoreVisesProyectoI{
         private String nameAttendant = "";
         private int attendantId = 0;
         private String name = "";
+        private String path = "";
         private Product p;
 
         protected void Page_Load(object sender, EventArgs e){
@@ -25,6 +26,7 @@ namespace CoreVisesProyectoI{
                     if (nameAttendant.Equals("Name: " + productActual.name + " Category:" + productActual.category + " Precie:" + productActual.price + " Quantity:" + productActual.quantity + " Status:" + productActual.status)){
                         this.name = productActual.name;
                         this.p = productActual;
+                        this.path = productActual.path;
                     }//End if  if (nameAttendant.Equals("Name: " + productActual.name + " Category:" + productActual.category + " Precie:" + productActual.price + " Quantity:" + productActual.quantity + " Status:" + productActual.status))
                 }//End foreach (Product productActual in product)
             }else {
@@ -39,6 +41,7 @@ namespace CoreVisesProyectoI{
                     if (nameAttendant.Equals("Name: " + productActual.name + " Category:" + productActual.category + " Precie:" + productActual.price + " Quantity:" + productActual.quantity + " Status:" + productActual.status)){
                         this.name = productActual.name;
                         this.p = productActual;
+                        this.path = productActual.path;
                     }//End if  if (nameAttendant.Equals("Name: " + productActual.name + " Category:" + productActual.category + " Precie:" + productActual.price + " Quantity:" + productActual.quantity + " Status:" + productActual.status))
                 }//End foreach (Product productActual in product)
             }//End if-else(IsPostBack)
@@ -46,13 +49,16 @@ namespace CoreVisesProyectoI{
         }//End Page_Load
 
         protected void Button2_Click(object sender, EventArgs e){
-
+            ProductBusiness productBusiness = new ProductBusiness();
+            if (productBusiness.updateProduct(this.name, tbCategoryUpdateDeleteProduct.Text, int.Parse(tbPriceUpdateDeleteProduct.Text), int.Parse(tbQuantityUpdateDeleteProduct.Text), tbStateUpdateDeleteProduct.Text, this.path)) {
+                Label1.Text = "Successful update.";
+            }//End if (productBusiness.updateProduct(this.name,this.categoy,this.price,this.quantity,this.status,this.path))
         }//End Button2_Click
 
         protected void Button1_Click(object sender, EventArgs e){
             ProductBusiness productBusiness = new ProductBusiness();
             if (productBusiness.deleteProduct(this.name)) {
-                Label1.Text = "Successful elimination" + this.name;
+                Label1.Text = "Successful elimination";
             }//End if (productBusiness.deleteProduct(this.nameAttendant))
         }//End Button1_Click
 

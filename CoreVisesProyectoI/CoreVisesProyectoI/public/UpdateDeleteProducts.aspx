@@ -6,7 +6,7 @@
     <div class="login">
         <div class="main-agileits">
             <div class="form-w3agile form1">
-                <h3>Register Products</h3>
+                <h3>Delete/Update Products</h3>
                 <form id="form1" runat="server">
                     <div class="key">
                         <asp:DropDownList ID="DropDownList1" runat="server"  AutoPostBack="True" required="" OnSelectedIndexChanged="DropDownList1_SelectedIndexChanged">
