@@ -24,7 +24,7 @@ namespace DATA {
                         ret = 0;
                         break;
                     }else {
-                        ret = 0;
+                        ret = 1;
                     }//End if (item.mail.Equals(mail) && item.pass.Equals(pass))
                 }//End foreach (Client item in clients)
 
