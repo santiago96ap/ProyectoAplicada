@@ -93,6 +93,7 @@
     <Content Include="WebServiceLoginSoap.asmx" />
     <None Include="Properties\PublishProfiles\PruebaWebPagina.pubxml" />
     <None Include="Properties\PublishProfiles\WebService.pubxml" />
+    <None Include="Properties\PublishProfiles\WSPagina.pubxml" />
     <None Include="Properties\PublishProfiles\WSproyect.pubxml" />
     <Content Include="Site1.Master" />
     <None Include="Web.Debug.config">
