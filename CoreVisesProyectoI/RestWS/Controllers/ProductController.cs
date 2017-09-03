@@ -22,12 +22,13 @@ namespace RestWS.Controllers
         {
             return "value";
         }
-        
+
+        [HttpPost]
         // POST api/values
-        public int Post([FromBody]string name)
+        public int Post([FromBody] Product p)
         {
             ProductBusiness pb = new ProductBusiness();
-            return pb.deleteProduct(name);
+            return pb.deleteProduct(p.name);
         }
 
         // PUT api/values/5
