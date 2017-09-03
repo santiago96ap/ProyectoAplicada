@@ -90,6 +90,8 @@
     <Content Include="public\Login.aspx" />
     <Content Include="public\Register.aspx" />
     <Content Include="public\RegisterProduct.aspx" />
+    <Content Include="public\ReportClient.aspx" />
+    <Content Include="public\ReportProduct.aspx" />
     <Content Include="public\UpdateDeleteClient.aspx" />
     <Content Include="public\UpdateDeleteProducts.aspx" />
     <Content Include="WebServiceLoginSoap.asmx" />
@@ -137,6 +139,20 @@
     </Compile>
     <Compile Include="public\RegisterProduct.aspx.designer.cs">
       <DependentUpon>RegisterProduct.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="public\ReportClient.aspx.cs">
+      <DependentUpon>ReportClient.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="public\ReportClient.aspx.designer.cs">
+      <DependentUpon>ReportClient.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="public\ReportProduct.aspx.cs">
+      <DependentUpon>ReportProduct.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="public\ReportProduct.aspx.designer.cs">
+      <DependentUpon>ReportProduct.aspx</DependentUpon>
     </Compile>
     <Compile Include="public\UpdateDeleteClient.aspx.cs">
       <DependentUpon>UpdateDeleteClient.aspx</DependentUpon>
