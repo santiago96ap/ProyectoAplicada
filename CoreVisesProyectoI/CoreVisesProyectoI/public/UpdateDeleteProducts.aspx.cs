@@ -57,7 +57,7 @@ namespace CoreVisesProyectoI{
 
         protected void Button1_Click(object sender, EventArgs e){
             ProductBusiness productBusiness = new ProductBusiness();
-            if (productBusiness.deleteProduct(this.name)) {
+            if ((productBusiness.deleteProduct(this.name)) == 1) {
                 Label1.Text = "Successful elimination";
             }//End if (productBusiness.deleteProduct(this.nameAttendant))
         }//End Button1_Click

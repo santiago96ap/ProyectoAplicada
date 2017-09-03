@@ -5,6 +5,8 @@ using System.Web;
 using System.Web.Services;
 using DOMAIN;
 using BUSINESS;
+using System.Web.Script.Services;
+using System.Web.Script.Serialization;
 
 namespace CoreVisesProyectoI{
     /// <summary>
@@ -35,6 +37,15 @@ namespace CoreVisesProyectoI{
             ClientBusiness cb = new ClientBusiness();
             return cb.updateClient(name, mail, pass, card);
         }//UpdateClient
+
+        [WebMethod]
+        [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
+        public String getClients() {
+            ClientBusiness cb = new ClientBusiness();
+            List<Client> clients = new List<Client>();
+            clients = cb.selectAllClients();
+            return new JavaScriptSerializer().Serialize(clients);
+        }//allClients
 
     }//End class WebServiceLoginSoap
 }//End namespace CoreVisesProyectoI

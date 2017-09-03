@@ -46,6 +46,22 @@ namespace BUSINESS {
             return cd.selectClient();
         }//end insertClient
 
+        public List<Client> selectAllClients() {
+            List<Client> decryptedClients = cd.selectClient();
+            List<Client> encryptedClients = new List<Client>();
+            RSA rsa = new RSA();
+
+            foreach (Client client in decryptedClients) {
+                client.name = Convert.ToBase64String(rsa.EncryptText(client.name, rsa.PublicKey));
+                client.card = Convert.ToBase64String(rsa.EncryptText(client.card, rsa.PublicKey));
+                client.mail = Convert.ToBase64String(rsa.EncryptText(client.mail, rsa.PublicKey));
+                client.pass = Convert.ToBase64String(rsa.EncryptText(client.pass, rsa.PublicKey));
+                encryptedClients.Add(client);
+            }//foreach
+
+            return encryptedClients;
+        }//selectAllClients
+
         public Boolean deleteClient(String name) {
             return cd.deleteClient(name);
         }//end deleteClient
