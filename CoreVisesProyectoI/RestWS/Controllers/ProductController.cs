@@ -16,15 +16,16 @@ namespace RestWS.Controllers
         {
             ProductBusiness p = new ProductBusiness();
             return p.selectProduct(); 
-        } 
+        }
+
         // GET api/values/5
         public string Get(int id)
         {
             return "value";
         }
 
-        [HttpPost]
         // POST api/values
+        [HttpPost]
         public int Post([FromBody] Product p)
         {
             ProductBusiness pb = new ProductBusiness();

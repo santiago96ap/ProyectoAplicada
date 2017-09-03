@@ -10,24 +10,24 @@ namespace RestWS.Controllers
 {
     public class ClientController : ApiController
     {
-        // GET api/values
-     
-        public List<Client> Get()
+        //// GET api/values
+
+        public List<Client> getClientes()
         {
             ClientBusiness cb = new ClientBusiness();
             return cb.selectClient();
         }
 
-
         // GET api/values/5
-        public string Get(string name)
+        public int Get(string mail, string pass)
         {
-            return name;
+            ClientBusiness cb = new ClientBusiness();
+
+            return cb.loginClient(mail, pass);
         }
 
         // POST api/values        
         [HttpPost]
-        //public Boolean Post([FromBody]String name, [FromBody] String mail, [FromBody]String pass, [FromBody] String card)
         public int Post([FromBody] Client c)
         {
             ClientBusiness cb = new ClientBusiness();
@@ -46,8 +46,6 @@ namespace RestWS.Controllers
         public void Delete(int id)
         {
         }
-
-       
        
     }
 }
