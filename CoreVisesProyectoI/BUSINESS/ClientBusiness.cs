@@ -16,7 +16,7 @@ namespace BUSINESS {
             this.cd = new ClientData();
         }
 
-        public Boolean insertClient(string name, string mail, string pass, string card) {
+        public int insertClient(string name, string mail, string pass, string card) {
            RSA rsa = new RSA();
            byte[] nameBytes = rsa.DecryptText(name, rsa.PrivateKey); 
            byte[] mailBytes = rsa.DecryptText(mail, rsa.PrivateKey);
@@ -29,12 +29,11 @@ namespace BUSINESS {
            return cd.insertClient(nameDecrypted, mailDecrypted, passDecrypted, cardDecrypted);
         }//end insertClient
 
-        public Boolean insertClientRest(String name, String mail, String pass, String card)
-        {          
+        public int insertClientRest(String name, String mail, String pass, String card) {          
             return cd.insertClient(name, mail, pass, card);//
         }//end insertClientRest
 
-        public Boolean loginClient(string email, string pass) {
+        public int loginClient(string email, string pass) {
             RSA rsa = new RSA();
             byte[] mailBytes = rsa.DecryptText(email, rsa.PrivateKey);
             byte[] passBytes = rsa.DecryptText(pass, rsa.PrivateKey);

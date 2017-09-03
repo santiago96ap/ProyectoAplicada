@@ -10,8 +10,8 @@ using MongoDB.Driver.Builders;
 
 namespace DATA {
     public class ClientData {
-        public Boolean insertClient(String name, String mail,String pass,String card) {
-            Boolean ret = false;
+        public int insertClient(String name, String mail,String pass,String card) {
+            int ret = 0;
             try {
 
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
@@ -21,37 +21,35 @@ namespace DATA {
                 List<Client> clients = selectClient();
                 foreach (Client client in clients) {
                     if (client.mail.Equals(mail)) {
-                        ret = false;
+                        ret = 0;
                         break;
                     }else {
-                        ret = true;
+                        ret = 0;
                     }//End if (item.mail.Equals(mail) && item.pass.Equals(pass))
                 }//End foreach (Client item in clients)
 
-                if (ret) {
+                if (ret == 1) {
                     var client = new Client(name,mail,pass,card);                
                     MongoCollection collection = db.GetCollection<Client>("Client");
                     collection.Insert<Client>(client);
                 }//Si es true, lo puede insertar.
             }catch (Exception error) {
-                ret = false;
+                ret = 0;
             }//try-catch
             return ret;
         }//end insertClient
 
         public List<Client> selectClient() {
-              
             MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
             MongoServer ms = mc.GetServer();
             MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
             ms.Connect();
             MongoCollection collection = db.GetCollection<Client>("Client");
             return collection.FindAllAs<Client>().ToList<Client>(); // select del doc cliente y lo almacena en una lista a retornar de tipo cliente
-
         }//end insertClient
 
-        public Boolean loginClient(string mail, string pass){
-            Boolean ret = false;
+        public int loginClient(string mail, string pass){
+            int ret = 0;
             try{
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
                 MongoServer ms = mc.GetServer();
@@ -61,14 +59,14 @@ namespace DATA {
                 List<Client> clients = selectClient();
                 foreach (Client item in clients){
                     if (item.mail.Equals(mail) && item.pass.Equals(pass)) {
-                        ret = true;
+                        ret = 1;
                         break;
                     } else {
-                        ret = false;
+                        ret = 0;
                     }//End if (item.mail.Equals(mail) && item.pass.Equals(pass))
                 }//End foreach (Client item in clients)
             }catch (Exception error) {
-                ret = false;
+                ret = 0;
             }
             return ret;
         }//end insertClient

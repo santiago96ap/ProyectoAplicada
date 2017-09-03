@@ -16,21 +16,16 @@ namespace CoreVisesProyectoI{
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
     public class WebServiceLoginSoap : System.Web.Services.WebService{
-
+        
         [WebMethod]
-        public string HelloWorld() { 
-            return "Hello World";
-        }//End Helloworld
-
-        [WebMethod]
-        public Boolean LoginClient(string mail, string pass){
+        public int LoginClient(string mail, string pass){
             ClientBusiness cb = new ClientBusiness();
             return cb.loginClient(mail, pass);
             // verify = cb.s
         }//End LoginClient
 
         [WebMethod]
-        public Boolean RegisterClient(string name, string mail, string pass, string card) {
+        public int RegisterClient(string name, string mail, string pass, string card) {
             ClientBusiness cb = new ClientBusiness();            
             return cb.insertClient(name, mail, pass, card);            
         }//End RegisterClient
