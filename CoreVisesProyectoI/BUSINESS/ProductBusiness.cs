@@ -7,12 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using UTIL;
 
-namespace BUSINESS
-{
-    public class ProductBusiness
-    {
-
-        private ProductData productData;
+namespace BUSINESS {
+    public class ProductBusiness {
 
         /*public ObjectId idBD { get; set; }
         public String name { get; set; }
@@ -21,13 +17,13 @@ namespace BUSINESS
         public int quantity { get; set; }
         public String status { get; set; }*/
 
-        public ProductBusiness()
-        {
+        private ProductData productData;
+
+        public ProductBusiness()  {
             this.productData = new ProductData();
         }//constructor
 
-        public Boolean insertProduct(String name, String category, String price, String quantity, String status, String path)
-        {
+        public Boolean insertProduct(String name, String category, String price, String quantity, String status, String path) {
 
             RSA rsa = new RSA();
 
@@ -49,18 +45,35 @@ namespace BUSINESS
 
         }//end insertProduct
 
-        public List<Product> selectProduct()
-        {
+        public List<Product> selectProduct() {
             return productData.selectProduct();
         }//end insertClient
 
-        public int deleteProduct(String name)
-        {
+        public int deleteProduct(String name) {
             return productData.deleteProduct(name);
         }//end deleteClient
 
-        public Boolean updateProduct(String name, String category, int price, int quantity, String status ,String path)
-        {
+        public List<Product> getProducts(String category) {
+            List<Product> decryptedProducts = productData.selectProduct();
+            List<Product> encryptedProducts = new List<Product>();
+            RSA rsa = new RSA();
+
+            foreach (Product product in decryptedProducts) {
+                if ((product.category.Equals(category)) || (category.Equals("All"))) {
+                    product.name = Convert.ToBase64String(rsa.EncryptText(product.name, rsa.PublicKey));
+                    product.category = Convert.ToBase64String(rsa.EncryptText(product.category, rsa.PublicKey));
+                    product.price = int.Parse(Convert.ToBase64String(rsa.EncryptText(product.price.ToString(), rsa.PublicKey)));
+                    product.quantity = int.Parse(Convert.ToBase64String(rsa.EncryptText(product.quantity.ToString(), rsa.PublicKey)));
+                    product.status = Convert.ToBase64String(rsa.EncryptText(product.status, rsa.PublicKey));
+                    product.path = Convert.ToBase64String(rsa.EncryptText(product.path, rsa.PublicKey));
+                    encryptedProducts.Add(product);
+                }//Solo agrega los productos de la categoría que se quiere mostrar.
+            }//foreach
+
+            return encryptedProducts;
+        }//getProducts
+
+        public Boolean updateProduct(String name, String category, int price, int quantity, String status ,String path) {
             return productData.updateProduct(name, category, price, quantity, status,path);
         }//end updateClient
 

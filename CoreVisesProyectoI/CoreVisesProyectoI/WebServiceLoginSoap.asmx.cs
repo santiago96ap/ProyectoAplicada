@@ -40,11 +40,11 @@ namespace CoreVisesProyectoI{
 
         [WebMethod]
         [ScriptMethod(ResponseFormat = ResponseFormat.Json)]
-        public String getClients() {
-            ClientBusiness cb = new ClientBusiness();
-            List<Client> clients = new List<Client>();
-            clients = cb.selectAllClients();
-            return new JavaScriptSerializer().Serialize(clients);
+        public String getProducts(String category) {
+            ProductBusiness pb = new ProductBusiness();
+            List<Product> products = new List<Product>();
+            products = pb.selectProduct();
+            return new JavaScriptSerializer().Serialize(products);
         }//allClients
 
     }//End class WebServiceLoginSoap
