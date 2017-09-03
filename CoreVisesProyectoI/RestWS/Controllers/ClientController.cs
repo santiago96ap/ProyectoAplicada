@@ -12,9 +12,10 @@ namespace RestWS.Controllers
     {
         // GET api/values
      
-        public IEnumerable<string> Get()
+        public List<Client> Get()
         {
-            return new string[] { "value1", "value2" };
+            ClientBusiness cb = new ClientBusiness();
+            return cb.selectClient();
         }
 
 

@@ -12,9 +12,10 @@ namespace RestWS.Controllers
     public class ProductController : ApiController
     {
         // GET api/values
-        public IEnumerable<string> Get()
+        public List<Product> Get()
         {
-            return new string[] { "value1", "value2" };
+            ProductBusiness pb = new ProductBusiness();
+            return pb.selectProduct();
         }
 
         // GET api/values/5

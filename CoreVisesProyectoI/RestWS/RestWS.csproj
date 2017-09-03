@@ -282,6 +282,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Properties\PublishProfiles\PruebaJohan.pubxml" />
     <None Include="Properties\PublishProfiles\REST.pubxml" />
     <None Include="Properties\PublishProfiles\Restt.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
