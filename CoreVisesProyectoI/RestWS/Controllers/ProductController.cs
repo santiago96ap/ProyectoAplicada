@@ -21,7 +21,7 @@ namespace RestWS.Controllers
         public List<Product> getProducts()
         {
             ProductBusiness p = new ProductBusiness();
-            return p.selectProduct();
+            return p.selectProduct(); 
         } 
         // GET api/values/5
         public string Get(int id)
