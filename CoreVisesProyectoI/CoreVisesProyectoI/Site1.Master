@@ -113,6 +113,8 @@
                                              <li class="active"><a href="RegisterProduct.aspx" class="act">Register Product</a></li>
                                              <li class="active"><a href="UpdateDeleteProducts.aspx" class="act">Delete/Update Product</a></li>
                                              <li class="active"><a href="UpdateDeleteClient.aspx" class="act">Delete/Update Client</a></li>
+                                             <li class="active"><a href="ReportProduct.aspx" class="act">Report Product</a></li>
+                                             <li class="active"><a href="ReportClient.aspx" class="act">Report Client</a></li>
                                         </li>
                                     <%  } %>   
                                     </ul>
