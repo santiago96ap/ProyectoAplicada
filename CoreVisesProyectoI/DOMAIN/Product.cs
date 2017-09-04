@@ -12,7 +12,7 @@ namespace DOMAIN
 
         //Attributes
         [BsonRepresentation(BsonType.ObjectId)]
-        public ObjectId _id { get; set; }
+        public string _id { get; set; }
         public String name { get; set; }
         public String category { get; set; }
         public int price { get; set; }
