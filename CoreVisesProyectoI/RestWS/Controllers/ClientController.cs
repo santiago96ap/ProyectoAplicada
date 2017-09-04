@@ -36,8 +36,10 @@ namespace RestWS.Controllers
         }
 
         // PUT api/values/5
-        public void Put(int id, [FromBody]string value)
+        public int Put(string mail, [FromBody]Client c)
         {
+            ClientBusiness cb = new ClientBusiness();
+            return cb.updateClient(c.name, c.mail, c.pass, c.card);
         }
 
         // DELETE api/values/5
