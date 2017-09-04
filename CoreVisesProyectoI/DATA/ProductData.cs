@@ -44,7 +44,7 @@ namespace DATA {
                 MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
                 MongoServer ms = mc.GetServer();
                 MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
-                var product = new Product(name, category, price, quantity, status,"");
+                var product = new Product(name, category, price, quantity, status, "c:\\temp\\uploads\\FileNotFound.jpg");
                 MongoCollection collection = db.GetCollection<Client>("Product");
                 collection.Insert<Product>(product);
                 ret = 1;
