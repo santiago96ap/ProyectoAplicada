@@ -44,7 +44,7 @@ namespace RestWS.Controllers
                 return pb.insertProductRest(p.name, p.category, p.price, p.quantity, p.status);
             }
             return 0;
-        }
+        }//Post
 
         // PUT api/values/5
         public void Put(int id, [FromBody]string value)
