@@ -28,8 +28,22 @@ namespace RestWS.Controllers
         [HttpPost]
         public int Post([FromBody] Product p)
         {
-            ProductBusiness pb = new ProductBusiness();
-            return pb.deleteProduct(p.name);
+
+            if (p._id.Equals("1"))
+            {
+                ProductBusiness pb = new ProductBusiness();
+                return pb.deleteProduct(p.name);
+            }
+            else if (p._id.Equals("2"))
+            {
+                ProductBusiness pb = new ProductBusiness();
+                return pb.updateProductRest(p.name, p.category, p.price, p.quantity, p.status);
+            }
+            else if (p._id.Equals("3")) {
+                ProductBusiness pb = new ProductBusiness();
+                return pb.insertProductRest(p.name,p.category,p.price,p.quantity,p.status);
+            }
+            return 0;
         }
 
         // PUT api/values/5

@@ -35,6 +35,27 @@ namespace DATA {
             return ret;
 
         }//insertProduct
+        public int insertProductRest(String name, String category, int price, int quantity, String status)
+        {
+
+            int ret = 0; // return variable
+            try
+            {
+                MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
+                MongoServer ms = mc.GetServer();
+                MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
+                var product = new Product(name, category, price, quantity, status,"");
+                MongoCollection collection = db.GetCollection<Client>("Product");
+                collection.Insert<Product>(product);
+                ret = 1;
+            }//try
+            catch (Exception error)
+            {
+                ret = 0;
+            }//catch
+            return ret;
+
+        }//insertProduct
 
         public List<Product> selectProduct() {
             MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
@@ -82,6 +103,33 @@ namespace DATA {
                 ret = true;
             } catch (Exception error) {
                 ret = true;
+            }//catch
+            return ret;
+        }//end updateProduct
+
+        public int updateProductRest(String name, String category, int price, int quantity, String status)
+        {
+            int ret = 0;// return variable
+            try
+            {
+                MongoClient mc = new MongoClient("mongodb://aplicada:aplicada@ds139428.mlab.com:39428/info_aplicada_ucr");
+                MongoServer ms = mc.GetServer();
+                MongoDatabase db = ms.GetDatabase("info_aplicada_ucr");
+                ms.Connect();
+                MongoCollection collection = db.GetCollection<Product>("Product");
+                var query = Query.EQ("name", name); // comparacion para hacer el update del documento de la bd                                
+                var product = collection.FindOneAs<Product>(query);
+                product.name = name;
+                product.category = category;
+                product.price = price;
+                product.quantity = quantity;
+                product.status = status;                
+                collection.Save(product);
+                ret = 1;
+            }
+            catch (Exception error)
+            {
+                ret = 0;
             }//catch
             return ret;
         }//end updateProduct
