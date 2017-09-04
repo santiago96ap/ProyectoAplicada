@@ -79,5 +79,10 @@ namespace BUSINESS {
             return cd.updateClient(nameDecrypted, mailDecrypted, passDecrypted, cardDecrypted);
         }//end updateClient
 
+        public int updateClientRest(String name, String mail, String pass, String card)
+        {
+            return cd.updateClient(name, mail, pass, card);
+        }//end updateClient
+
     }//end class
 }//end namespace

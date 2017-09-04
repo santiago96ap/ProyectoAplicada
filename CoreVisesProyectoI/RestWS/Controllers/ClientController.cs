@@ -28,18 +28,24 @@ namespace RestWS.Controllers
         [HttpPost]
         public int Post([FromBody] Client c)
         {
-            ClientBusiness cb = new ClientBusiness();
+            if(c._id.Equals("1"))
+            {
+                ClientBusiness cb = new ClientBusiness();
 
-         //   return cb.insertClientRest(name,mail,pass,card);//
-            return cb.insertClientRest(c.name, c.mail, c.pass, c.card);
-
+                //   return cb.insertClientRest(name,mail,pass,card);//
+                return cb.insertClientRest(c.name, c.mail, c.pass, c.card);
+            }else if (c._id.Equals("2"))
+            {
+                ClientBusiness cb = new ClientBusiness();
+                return cb.updateClientRest(c.name, c.mail, c.pass, c.card);
+            }//if-else
+            return 0;
         }
 
         // PUT api/values/5
-        public int Put(string mail, [FromBody]Client c)
+        public int Put([FromBody] Client c)
         {
-            ClientBusiness cb = new ClientBusiness();
-            return cb.updateClient(c.name, c.mail, c.pass, c.card);
+            return 0;
         }
 
         // DELETE api/values/5
