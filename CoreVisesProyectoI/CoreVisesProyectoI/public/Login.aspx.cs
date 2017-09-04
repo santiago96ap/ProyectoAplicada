@@ -32,7 +32,7 @@ namespace CoreVisesProyectoI
                 Session["correo"] = tbEmailLogin.Text;
                 Response.BufferOutput = true;
                 //Response.Redirect("http://192.168.43.169:8092/public/Default.aspx");
-                Response.Redirect("http://localhost:50526/public/Default.aspx");
+                Response.Redirect("http://localhost:8093/public/Default.aspx");
             }
             else {
                 Label1.Text = "Incorrect data";
