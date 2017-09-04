@@ -45,6 +45,13 @@ namespace BUSINESS {
 
         }//end insertProduct
 
+        public int insertProductRest(String name, String category, int price, int quantity, String status)
+        {
+
+            return productData.insertProductRest(name, category, price, quantity, status);
+
+        }//end insertProduct
+
         public List<Product> selectProduct() {
             return productData.selectProduct();
         }//end insertClient
@@ -77,5 +84,9 @@ namespace BUSINESS {
             return productData.updateProduct(name, category, price, quantity, status,path);
         }//end updateClient
 
+        public int updateProductRest(String name, String category, int price, int quantity, String status)
+        {
+            return productData.updateProductRest(name, category, price, quantity, status);
+        }//end updateClient
     }//end class
 }//end namespace

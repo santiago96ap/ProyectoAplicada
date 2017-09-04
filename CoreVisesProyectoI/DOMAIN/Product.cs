@@ -1,4 +1,5 @@
 ﻿using MongoDB.Bson;
+using MongoDB.Bson.Serialization.Attributes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace DOMAIN
     public class Product{
 
         //Attributes
+        [BsonRepresentation(BsonType.ObjectId)]
         public ObjectId _id { get; set; }
         public String name { get; set; }
         public String category { get; set; }
