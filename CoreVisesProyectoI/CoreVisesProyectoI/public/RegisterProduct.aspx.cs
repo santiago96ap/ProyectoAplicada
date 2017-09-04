@@ -54,7 +54,7 @@ namespace CoreVisesProyectoI{
         }//End Button2_Click
 
         public String saveImagen(HttpPostedFile file) {            
-            string savePath = "c:\\Program Files (x86)\\EasyPHP - Devserver - 16.1\\eds - www\\GremlinStore\\public\\images\\";
+            string savePath = "c:\\temp\\uploads\\";
             string fileName = FileUpload1.FileName;
             string pathToCheck = savePath + fileName;
             string tempfileName = "";
@@ -75,7 +75,7 @@ namespace CoreVisesProyectoI{
                 savePath += fileName;
                 FileUpload1.SaveAs(savePath);
             }//End if-else (System.IO.File.Exists(pathToCheck))
-            return "public\\images\\"+fileName;
+            return savePath;
         }//End saveImagen
     }//End class RegisterProduct
 }//End namespace CoreVisesProyectoI
