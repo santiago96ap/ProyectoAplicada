@@ -4,18 +4,19 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
-using BUSINESS;
 using DOMAIN;
+using BUSINESS;
+
 namespace RestWS.Controllers
 {
-    public class ClientController : ApiController
+    public class ManagerController : ApiController
     {
-        //// GET api/values
 
-        public List<Client> getClientes()
+        // GET api/values
+        public List<Manager> getManagers()
         {
-            ClientBusiness cb = new ClientBusiness();
-            return cb.selectClient();
+            ManagerBusiness mb = new ManagerBusiness();
+            return mb.selectManager();
         }
 
         // GET api/values/5
@@ -26,12 +27,12 @@ namespace RestWS.Controllers
 
         // POST api/values        
         [HttpPost]
-        public int Post([FromBody] Client c)
+        public Boolean Post([FromBody] Manager m)
         {
-            ClientBusiness cb = new ClientBusiness();
+            ManagerBusiness mb = new ManagerBusiness();
 
-         //   return cb.insertClientRest(name,mail,pass,card);//
-            return cb.insertClientRest(c.name, c.mail, c.pass, c.card);
+            //   return cb.insertClientRest(name,mail,pass,card);//
+            return mb.loginClient(m.name, m.password);
 
         }
 
@@ -44,6 +45,6 @@ namespace RestWS.Controllers
         public void Delete(int id)
         {
         }
-       
+
     }//class
 }//namespace
